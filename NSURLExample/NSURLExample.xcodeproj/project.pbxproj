@@ -16,7 +16,8 @@
 		0BBAB7A41ECF1F4D0074ECB8 /* NSURLExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAB7A31ECF1F4D0074ECB8 /* NSURLExampleUITests.swift */; };
 		0BBAB7B21ECF21AC0074ECB8 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAB7B11ECF21AC0074ECB8 /* Test.swift */; };
 		0BCADBF21ECF32A2004E8294 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCADBE51ECF3252004E8294 /* Alamofire.framework */; };
-		0BCADBF41ECF4057004E8294 /* DataHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCADBF31ECF4057004E8294 /* DataHouse.swift */; };
+		0BCADBF41ECF4057004E8294 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCADBF31ECF4057004E8294 /* DataCenter.swift */; };
+		0BCADBF61ECF502A004E8294 /* HitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCADBF51ECF502A004E8294 /* HitterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +102,8 @@
 		0BBAB7A51ECF1F4D0074ECB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BBAB7B11ECF21AC0074ECB8 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		0BCADBD91ECF3252004E8294 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../../Downloads/Alamofire-master/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		0BCADBF31ECF4057004E8294 /* DataHouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHouse.swift; sourceTree = "<group>"; };
+		0BCADBF31ECF4057004E8294 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		0BCADBF51ECF502A004E8294 /* HitterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,11 +159,12 @@
 				0BBAB7851ECF1F4D0074ECB8 /* ViewController.swift */,
 				0BCADBD91ECF3252004E8294 /* Alamofire.xcodeproj */,
 				0BBAB7871ECF1F4D0074ECB8 /* Main.storyboard */,
+				0BCADBF51ECF502A004E8294 /* HitterViewController.swift */,
 				0BBAB78A1ECF1F4D0074ECB8 /* Assets.xcassets */,
 				0BBAB78C1ECF1F4D0074ECB8 /* LaunchScreen.storyboard */,
 				0BBAB78F1ECF1F4D0074ECB8 /* Info.plist */,
 				0BBAB7B11ECF21AC0074ECB8 /* Test.swift */,
-				0BCADBF31ECF4057004E8294 /* DataHouse.swift */,
+				0BCADBF31ECF4057004E8294 /* DataCenter.swift */,
 			);
 			path = NSURLExample;
 			sourceTree = "<group>";
@@ -390,10 +393,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BCADBF41ECF4057004E8294 /* DataHouse.swift in Sources */,
+				0BCADBF41ECF4057004E8294 /* DataCenter.swift in Sources */,
 				0BBAB7861ECF1F4D0074ECB8 /* ViewController.swift in Sources */,
 				0BBAB7841ECF1F4D0074ECB8 /* AppDelegate.swift in Sources */,
 				0BBAB7B21ECF21AC0074ECB8 /* Test.swift in Sources */,
+				0BCADBF61ECF502A004E8294 /* HitterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
