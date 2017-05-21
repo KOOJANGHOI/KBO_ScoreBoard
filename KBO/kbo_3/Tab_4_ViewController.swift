@@ -10,19 +10,8 @@ import UIKit
 
 class Tab_4_ViewController: UIViewController {
 
-    //아울렛
-    
-    @IBOutlet weak var mainSegment: UISegmentedControl!
-    @IBOutlet weak var pitcherContainer: UIView!
-    @IBOutlet weak var batterContainer: UIView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 초기설정
-        pitcherContainer.isHidden = false
-        batterContainer.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,20 +19,6 @@ class Tab_4_ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // 세그먼트 클릭시
-    @IBAction func mainSegmentAction(_ sender: Any) {
-        if(mainSegment.selectedSegmentIndex == 0) // 투수
-        {
-            pitcherContainer.isHidden = false
-            batterContainer.isHidden = true
-        }
-        else if(mainSegment.selectedSegmentIndex == 1) // 타자
-        {
-            pitcherContainer.isHidden = true
-            batterContainer.isHidden = false
-        }
-    }
-
     /*
     // MARK: - Navigation
 
