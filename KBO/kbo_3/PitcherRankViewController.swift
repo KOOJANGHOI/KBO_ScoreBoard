@@ -9,7 +9,8 @@
 import UIKit
 
 class PitcherRankViewController: UIViewController, UITableViewDelegate {
-    
+    var queue : OperationQueue!
+
     func getFromJSON(){
         pitchers.removeAll()
         let url = URL(string: urlStr_pitcher)!
@@ -52,24 +53,10 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
     
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //self.getFromJSON()
-        PitcherRankTableView.reloadData()
-        
-       
-        
-    }
-    
-    override func viewDidLoad() {
-        var rank = 1
 
-        super.viewDidLoad()
-        getFromJSON()
-        PitcherRankTableView.dataSource = self
-        PitcherRankTableView.delegate = self
-        // 3으로 초기화
-        OtherKindButton = 2
-        // Do any additional setup after loading the view.
+        super.viewWillAppear(animated)
+        
+        var rank = 1
         
         if OtherKindButton == 0 {
             pitchers.sort(by: { $0.so! > $1.so!})
@@ -90,6 +77,47 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
                 rank=rank+1
             }
         }
+        PitcherRankTableView.reloadData()
+        
+
+
+    }
+    
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        self.getFromJSON()
+        
+        var rank = 1
+        
+        if OtherKindButton == 0 {
+            pitchers.sort(by: { $0.so! > $1.so!})
+            for i in 0..<pitchers.count {
+                pitchers[i].rank=rank
+                rank=rank+1
+            }
+        } else if OtherKindButton == 1 {
+            pitchers.sort(by: { $0.era! < $1.era!})
+            for i in 0..<pitchers.count {
+                pitchers[i].rank=rank
+                rank=rank+1
+            }
+        } else {
+            pitchers.sort(by: { $0.win! > $1.win!})
+            for i in 0..<pitchers.count {
+                pitchers[i].rank=rank
+                rank=rank+1
+            }
+        }
+        PitcherRankTableView.reloadData()
+        
+        PitcherRankTableView.dataSource = self
+        PitcherRankTableView.delegate = self
+        // 3으로 초기화
+        OtherKindButton = 2
+        // Do any additional setup after loading the view.
+        
+     
 
     }
 
@@ -111,7 +139,7 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
         default:
             PitcherRankKind.text = "오류"
         }
-        self.viewDidLoad()
+        self.viewWillAppear(true)
 
     }
     
@@ -128,7 +156,7 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
         default:
             PitcherRankKind.text = "오류"
         }
-        self.viewDidLoad()
+        self.viewWillAppear(true)
     }
     
 
@@ -166,6 +194,7 @@ extension PitcherRankViewController: UITableViewDataSource{
     
         cell?.PitcherTeam.text = pitcher.team
         cell?.PitcherRank.text = String(pitcher.rank!)
+        
         return cell!
             
         

@@ -8,9 +8,9 @@
 
 import Foundation
 
-let urlStr_hitter = "http://172.16.172.87:8000/hitters/"
-let urlStr_pitcher = "http://172.16.172.87:8000/pitchers/"
-let urlStr_team = "http://172.16.172.87:8000/teams/"
+let urlStr_hitter = "http://127.0.0.1:8000/hitters/"
+let urlStr_pitcher = "http://127.0.0.1:8000/pitchers/"
+let urlStr_team = "http://127.0.0.1:8000/teams/"
 
 struct Player {
     var id:Int?
@@ -24,6 +24,8 @@ struct Hitter {
     var homerun:Int?
     var team:String?
     var point:Int?
+    var rank:Int?
+
 }
 
 struct Pitcher {
@@ -42,6 +44,8 @@ struct Team {
     var lose:Int?
     var diff:Float?
     var rate:Float?
+    var rank:Int?
+    
 }
 var players = [Player]()
 
