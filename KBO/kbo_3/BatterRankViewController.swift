@@ -26,7 +26,7 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        OtherKindButton = 3
+        OtherKindButton = 2
 
         // Do any additional setup after loading the view.
     }
@@ -38,15 +38,13 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
     
     //다른 순위 보기(이전)
     @IBAction func BatterRankKindButtonBefore(_ sender: Any) {
-        OtherKindButton = (OtherKindButton-1)%4
+        OtherKindButton = (OtherKindButton-1)%3
         switch OtherKindButton {
         case 0:
-            BatterRankKind.text = "도루 순위"
-        case 1:
             BatterRankKind.text = "홈런 순위"
-        case 2:
+        case 1:
             BatterRankKind.text = "타점 순위"
-        case 3:
+        case 2:
             BatterRankKind.text = "타율 순위"
         default:
             BatterRankKind.text = "오류"
@@ -55,15 +53,13 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
     
     //다른 순위 보기(다음)
     @IBAction func BatterRankKindButtonAfter(_ sender: Any) {
-        OtherKindButton = (OtherKindButton+1)%4
+        OtherKindButton = (OtherKindButton+1)%3
         switch OtherKindButton {
         case 0:
-            BatterRankKind.text = "도루 순위"
-        case 1:
             BatterRankKind.text = "홈런 순위"
-        case 2:
+        case 1:
             BatterRankKind.text = "타점 순위"
-        case 3:
+        case 2:
             BatterRankKind.text = "타율 순위"
         default:
             BatterRankKind.text = "오류"

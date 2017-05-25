@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BCCE7DB1ED6B94400231152 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCE7DA1ED6B94400231152 /* DataCenter.swift */; };
 		370D74261EBE1136009F7F46 /* PitcherRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D74251EBE1136009F7F46 /* PitcherRankViewController.swift */; };
 		370D74281EBE1141009F7F46 /* BatterRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D74271EBE1141009F7F46 /* BatterRankViewController.swift */; };
 		370D742A1EBE12F9009F7F46 /* teamRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D74291EBE12F9009F7F46 /* teamRankTableViewCell.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BCCE7DA1ED6B94400231152 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		1274C03D7B2C726258282BA4 /* Pods_kbo_3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kbo_3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E1A8402A9B89C9E9E783AC1 /* Pods-kbo_3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbo_3Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kbo_3Tests/Pods-kbo_3Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2030374E2ADA567843DA6530 /* Pods-kbo_3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kbo_3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kbo_3/Pods-kbo_3.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				37BAD3FE1EBCB62F00DEBF51 /* Assets.xcassets */,
 				37BAD4001EBCB62F00DEBF51 /* LaunchScreen.storyboard */,
 				37BAD4031EBCB62F00DEBF51 /* Info.plist */,
+				0BCCE7DA1ED6B94400231152 /* DataCenter.swift */,
 			);
 			path = kbo_3;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				370D74301EBE239D009F7F46 /* BatterRankTableViewCell.swift in Sources */,
 				37BAD4261EBCB69000DEBF51 /* Tab_1_ViewController.swift in Sources */,
 				37BAD3F81EBCB62F00DEBF51 /* AppDelegate.swift in Sources */,
+				0BCCE7DB1ED6B94400231152 /* DataCenter.swift in Sources */,
 				370D742C1EBE18A2009F7F46 /* ScheduleTableViewCell.swift in Sources */,
 				374E57581EBD9D2300EEF4F4 /* InfoViewController.swift in Sources */,
 				370D74281EBE1141009F7F46 /* BatterRankViewController.swift in Sources */,
