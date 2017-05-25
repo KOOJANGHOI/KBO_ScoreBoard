@@ -17,7 +17,6 @@ class Tab_3_ViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         
         // 초기화면 설정(투수 컨테이너 부터 보임)
