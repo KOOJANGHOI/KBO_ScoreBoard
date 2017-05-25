@@ -24,5 +24,5 @@ class Team(models.Model):
     draw = models.IntegerField(default=0)       # 무
     lose = models.IntegerField(default=0)       # 패
     diff = models.FloatField(default=0)         # 게임차
-    late = models.FloatField(default=0)         # 승률
+    rate = models.FloatField(default=0)         # 승률
 
