@@ -10,6 +10,8 @@ import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
 
+    // 슬라이더 제어 변수
+    var value:Int = 0
     
     @IBOutlet weak var GameTime: UILabel!       // 경기시간
     
@@ -27,9 +29,15 @@ class ScheduleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var GamePlace: UILabel!      // 경기 장소
     
+    // 슬라이더
+    @IBOutlet weak var mainSlider: UISlider!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        // 슬라이더 가운데 에서 시작
+        mainSlider.value = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,5 +45,10 @@ class ScheduleTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func moveSlider(_ sender: Any) {
+        value = Int(mainSlider.value)
+    }
+    
 
 }

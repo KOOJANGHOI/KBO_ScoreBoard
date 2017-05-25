@@ -8,8 +8,18 @@
 
 import UIKit
 
-class Tab_1_ViewController: UIViewController {
+class Tab_1_ViewController: UIViewController, UITableViewDelegate {
 
+    // 날짜 정보
+    @IBOutlet weak var DayInfo: UILabel!
+    // 이전날짜 버튼 클릭시
+    @IBAction func DayBeforeButton(_ sender: Any) {
+    }
+    // 다음날짜 버튼 클릭시
+    @IBAction func DayAfterButton(_ sender: Any) {
+    }
+    // 일정/결과 테이블 뷰
+    @IBOutlet weak var ScheduleTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

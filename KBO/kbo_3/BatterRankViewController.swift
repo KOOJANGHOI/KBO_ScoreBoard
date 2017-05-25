@@ -10,9 +10,14 @@ import UIKit
 
 class BatterRankViewController: UIViewController, UITableViewDelegate {
     
+    // 타자 순위 제어 변수
+    var OtherKindButton:Int = 0
+    
     //타자 순위 이름
     @IBOutlet weak var BatterRankKind: UILabel!
     
+    //타자 사진
+    @IBOutlet weak var BatterImage: UIImageView!
     
     //타자 순위 테이블 뷰
     @IBOutlet weak var BatterRankTableView: UITableView!
@@ -20,6 +25,8 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        OtherKindButton = 3
 
         // Do any additional setup after loading the view.
     }
@@ -31,10 +38,36 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
     
     //다른 순위 보기(이전)
     @IBAction func BatterRankKindButtonBefore(_ sender: Any) {
+        OtherKindButton = (OtherKindButton-1)%4
+        switch OtherKindButton {
+        case 0:
+            BatterRankKind.text = "도루 순위"
+        case 1:
+            BatterRankKind.text = "홈런 순위"
+        case 2:
+            BatterRankKind.text = "타점 순위"
+        case 3:
+            BatterRankKind.text = "타율 순위"
+        default:
+            BatterRankKind.text = "오류"
+        }
     }
     
     //다른 순위 보기(다음)
     @IBAction func BatterRankKindButtonAfter(_ sender: Any) {
+        OtherKindButton = (OtherKindButton+1)%4
+        switch OtherKindButton {
+        case 0:
+            BatterRankKind.text = "도루 순위"
+        case 1:
+            BatterRankKind.text = "홈런 순위"
+        case 2:
+            BatterRankKind.text = "타점 순위"
+        case 3:
+            BatterRankKind.text = "타율 순위"
+        default:
+            BatterRankKind.text = "오류"
+        }
     }
 
     /*

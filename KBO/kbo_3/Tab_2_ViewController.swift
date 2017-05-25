@@ -10,12 +10,8 @@ import UIKit
 
 class Tab_2_ViewController: UIViewController, UITableViewDelegate {
     
-    // 날짜(요일) 관련 레이블
-    @IBOutlet weak var DayInfo: UILabel!
-    
-    
-    // 일정/결과 테이블 뷰
-    @IBOutlet weak var ScheduleTableView: UITableView!
+    // 구단순위 테이블 뷰
+    @IBOutlet weak var RankTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +24,6 @@ class Tab_2_ViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //이전 날짜 버튼 클릭시
-    @IBAction func DayBeforeButton(_ sender: Any) {
-    }
-    
-    
-    //다음 날짜 버튼 클릭시
-    @IBAction func DayAfterButton(_ sender: Any) {
-    }
     
 
     /*

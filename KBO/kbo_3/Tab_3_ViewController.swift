@@ -9,15 +9,20 @@
 import UIKit
 
 class Tab_3_ViewController: UIViewController, UITableViewDelegate {
-
-    // 구단순위의 테이블 뷰 연결
-    @IBOutlet weak var RankTableView: UITableView!
     
+    // 투수 컨테이너
+    @IBOutlet weak var pitcherContainer: UIView!
+    // 타자 컨테이너
+    @IBOutlet weak var batterContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // 초기화면 설정(투수 컨테이너 부터 보임)
+        pitcherContainer.isHidden = false
+        batterContainer.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +30,24 @@ class Tab_3_ViewController: UIViewController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // 메인 세그먼트
+    @IBOutlet weak var mainSegment: UISegmentedControl!
 
+    // 메인 세그먼트 클릭시
+    @IBAction func mainSegmentAction(_ sender: Any) {
+        
+        if(mainSegment.selectedSegmentIndex == 0) // 투수
+        {
+            pitcherContainer.isHidden = false
+            batterContainer.isHidden = true
+        }
+        else if(mainSegment.selectedSegmentIndex == 1) // 타자
+        {
+            pitcherContainer.isHidden = true
+            batterContainer.isHidden = false
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
