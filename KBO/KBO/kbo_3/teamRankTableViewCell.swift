@@ -10,7 +10,7 @@ import UIKit
 
 class teamRankTableViewCell: UITableViewCell {
 
-    // 순위,팀명,경기수,숭,무,패,승률
+    // 순위,팀명,경기수,숭,무,패,승률,로고
     @IBOutlet weak var TeamRank: UILabel!
     @IBOutlet weak var TeamName: UILabel!
     @IBOutlet weak var GameNum: UILabel!
@@ -18,6 +18,7 @@ class teamRankTableViewCell: UITableViewCell {
     @IBOutlet weak var DrawNum: UILabel!
     @IBOutlet weak var LoseNum: UILabel!
     @IBOutlet weak var WinRate: UILabel!
+    @IBOutlet weak var TeamLogo: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
