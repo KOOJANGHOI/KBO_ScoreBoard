@@ -25,7 +25,7 @@ struct Hitter {
     var team:String?
     var point:Int?
     var rank:Int?
-
+    
 }
 
 struct Pitcher {
@@ -47,10 +47,20 @@ struct Team {
     var rank:Int?
     
 }
+struct Information {
+    
+    var away_team:String
+    var home_team:String
+    var away_pitcher:String
+    var home_pitcher:String
+    var time:String
+    var stardium:String
+}
+var Schedule = [Information]()
+var Schedules = [Schedule]
+
 var players = [Player]()
 
 var hitters = [Hitter]()
 var pitchers = [Pitcher]()
 var teams = [Team]()
-
-

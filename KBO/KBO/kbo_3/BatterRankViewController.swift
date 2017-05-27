@@ -9,7 +9,6 @@
 import UIKit
 
 class BatterRankViewController: UIViewController, UITableViewDelegate {
-    
     func getFromJSON(){
         hitters.removeAll()
         let url = URL(string: urlStr_hitter)!

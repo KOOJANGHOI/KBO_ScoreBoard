@@ -154,10 +154,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">한국 프로야구 데이터 제공 앱
-
-
-by
-김태호 유병민 구장회</string>
+                                    
+                                    
+                                    by
+                                    김태호 유병민 구장회</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -184,18 +184,6 @@ by
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jj-1N-fky">
                                 <rect key="frame" x="0.0" y="60" width="375" height="40"/>
                                 <subviews>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날 짜(요일)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5c-mU-Cpw">
-                                        <rect key="frame" x="138" y="10" width="99" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="99" id="aYc-3b-P8e"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmc-yQ-1hB">
                                         <rect key="frame" x="337" y="5" width="30" height="30"/>
                                         <constraints>
@@ -222,7 +210,6 @@ by
                                 </subviews>
                                 <color key="backgroundColor" red="0.2321638372" green="1" blue="0.20616384679999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                     <constraint firstItem="j1q-W1-mwL" firstAttribute="top" secondItem="Bmc-yQ-1hB" secondAttribute="top" id="0t7-i4-uFF"/>
                                     <constraint firstItem="Bmc-yQ-1hB" firstAttribute="leading" secondItem="S5c-mU-Cpw" secondAttribute="trailing" constant="99" id="32Z-XU-s5P"/>
                                     <constraint firstItem="j1q-W1-mwL" firstAttribute="centerY" secondItem="4jj-1N-fky" secondAttribute="centerY" id="3Ir-Iw-Sqx"/>
@@ -234,17 +221,6 @@ by
                                     <constraint firstItem="S5c-mU-Cpw" firstAttribute="centerX" secondItem="4jj-1N-fky" secondAttribute="centerX" id="syz-gi-ZcG"/>
                                     <constraint firstItem="Bmc-yQ-1hB" firstAttribute="trailing" secondItem="4jj-1N-fky" secondAttribute="trailingMargin" id="vRn-I9-BMO"/>
                                     <constraint firstItem="Bmc-yQ-1hB" firstAttribute="baseline" secondItem="j1q-W1-mwL" secondAttribute="baseline" id="wUo-wC-Uq4"/>
-=======
-                                    <constraint firstItem="Bmc-yQ-1hB" firstAttribute="baseline" secondItem="j1q-W1-mwL" secondAttribute="baseline" id="5E6-UD-Mz1"/>
-                                    <constraint firstItem="j1q-W1-mwL" firstAttribute="leading" secondItem="4jj-1N-fky" secondAttribute="leadingMargin" id="A07-Vs-Mfd"/>
-                                    <constraint firstItem="Bmc-yQ-1hB" firstAttribute="firstBaseline" secondItem="j1q-W1-mwL" secondAttribute="firstBaseline" id="BdW-ZG-Wkb"/>
-                                    <constraint firstItem="j1q-W1-mwL" firstAttribute="centerY" secondItem="4jj-1N-fky" secondAttribute="centerY" id="BfB-NV-mJp"/>
-                                    <constraint firstItem="S5c-mU-Cpw" firstAttribute="centerX" secondItem="4jj-1N-fky" secondAttribute="centerX" id="FE1-wc-JoH"/>
-                                    <constraint firstItem="j1q-W1-mwL" firstAttribute="top" secondItem="4jj-1N-fky" secondAttribute="top" constant="5" id="Ma7-g5-4ZI"/>
-                                    <constraint firstItem="Bmc-yQ-1hB" firstAttribute="trailing" secondItem="4jj-1N-fky" secondAttribute="trailingMargin" id="Neo-BC-AAB"/>
-                                    <constraint firstItem="j1q-W1-mwL" firstAttribute="top" secondItem="Bmc-yQ-1hB" secondAttribute="top" id="oCc-mt-Mxn"/>
-                                    <constraint firstItem="j1q-W1-mwL" firstAttribute="centerY" secondItem="S5c-mU-Cpw" secondAttribute="centerY" id="sEr-CY-YSb"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X6O-DR-Rfd">
@@ -255,11 +231,7 @@ by
                                         <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uJy-AO-nHH" id="cgD-VK-LYq">
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-=======
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WZ-hf-kmj">
@@ -325,20 +297,14 @@ by
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="o4J-FX-jhx">
                                                     <rect key="frame" x="104" y="60" width="166" height="31"/>
-=======
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="o4J-FX-jhx">
-                                                    <rect key="frame" x="6" y="53" width="363" height="31"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                                     <connections>
                                                         <action selector="moveSlider:" destination="uJy-AO-nHH" eventType="valueChanged" id="D2f-Mm-Ruh"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                                 <constraint firstItem="nJ9-zi-LjT" firstAttribute="leading" secondItem="0WZ-hf-kmj" secondAttribute="trailing" constant="8" symbolic="YES" id="3Vq-tA-AYf"/>
                                                 <constraint firstItem="o4J-FX-jhx" firstAttribute="top" secondItem="wES-eo-inA" secondAttribute="bottom" constant="4" id="68K-rq-ugx"/>
                                                 <constraint firstItem="o4J-FX-jhx" firstAttribute="top" secondItem="BE2-jf-BcQ" secondAttribute="bottom" constant="20" id="8MF-JC-dlo"/>
@@ -371,39 +337,6 @@ by
                                                 <constraint firstItem="AzY-Uj-RTG" firstAttribute="centerY" secondItem="wES-eo-inA" secondAttribute="centerY" id="uRX-Ai-kJ7"/>
                                                 <constraint firstItem="ase-up-73X" firstAttribute="leading" secondItem="BE2-jf-BcQ" secondAttribute="trailing" constant="11" id="xsx-hA-hgc"/>
                                                 <constraint firstItem="Zpn-SM-PCl" firstAttribute="trailing" secondItem="cgD-VK-LYq" secondAttribute="trailingMargin" id="zyG-Mh-YxT"/>
-=======
-                                                <constraint firstItem="U95-XT-0p4" firstAttribute="baseline" secondItem="ase-up-73X" secondAttribute="baseline" id="0c1-NN-GVf"/>
-                                                <constraint firstItem="9by-UY-7Xq" firstAttribute="bottom" secondItem="0WZ-hf-kmj" secondAttribute="bottom" id="FEs-hF-MUg"/>
-                                                <constraint firstItem="ya0-iN-7Ad" firstAttribute="baseline" secondItem="nJ9-zi-LjT" secondAttribute="baseline" id="FXa-nA-9vt"/>
-                                                <constraint firstItem="BE2-jf-BcQ" firstAttribute="leading" secondItem="AzY-Uj-RTG" secondAttribute="trailing" constant="8" symbolic="YES" id="HaH-2g-Hyn"/>
-                                                <constraint firstItem="ase-up-73X" firstAttribute="leading" secondItem="BE2-jf-BcQ" secondAttribute="trailing" constant="8" symbolic="YES" id="KcR-Mz-a03"/>
-                                                <constraint firstItem="Zpn-SM-PCl" firstAttribute="leading" secondItem="ya0-iN-7Ad" secondAttribute="trailing" constant="2" id="Mc1-3J-qmy"/>
-                                                <constraint firstItem="o4J-FX-jhx" firstAttribute="leading" secondItem="0WZ-hf-kmj" secondAttribute="leading" id="Nhc-GJ-K7O"/>
-                                                <constraint firstItem="U95-XT-0p4" firstAttribute="leading" secondItem="ase-up-73X" secondAttribute="trailing" constant="8" symbolic="YES" id="Orp-cW-YOX"/>
-                                                <constraint firstItem="nJ9-zi-LjT" firstAttribute="leading" secondItem="0WZ-hf-kmj" secondAttribute="trailing" constant="8" symbolic="YES" id="P6R-rp-B50"/>
-                                                <constraint firstItem="o4J-FX-jhx" firstAttribute="top" secondItem="wES-eo-inA" secondAttribute="bottom" constant="4" id="V7I-95-aVu"/>
-                                                <constraint firstItem="0WZ-hf-kmj" firstAttribute="top" secondItem="cgD-VK-LYq" secondAttribute="topMargin" id="WqU-iE-714"/>
-                                                <constraint firstItem="9by-UY-7Xq" firstAttribute="leading" secondItem="nJ9-zi-LjT" secondAttribute="leading" id="XaE-lU-XEG"/>
-                                                <constraint firstItem="wES-eo-inA" firstAttribute="trailing" secondItem="ya0-iN-7Ad" secondAttribute="trailing" id="YH9-Wr-Z9i"/>
-                                                <constraint firstItem="0WZ-hf-kmj" firstAttribute="leading" secondItem="cgD-VK-LYq" secondAttribute="leadingMargin" id="a6O-95-3Jq"/>
-                                                <constraint firstItem="nJ9-zi-LjT" firstAttribute="baseline" secondItem="0WZ-hf-kmj" secondAttribute="firstBaseline" id="c9O-xf-laW"/>
-                                                <constraint firstItem="Gvf-WW-eZA" firstAttribute="leading" secondItem="ya0-iN-7Ad" secondAttribute="leading" id="csF-oP-qZ1"/>
-                                                <constraint firstItem="BE2-jf-BcQ" firstAttribute="leading" secondItem="nJ9-zi-LjT" secondAttribute="trailing" constant="2" id="dAF-o0-mi9"/>
-                                                <constraint firstItem="ya0-iN-7Ad" firstAttribute="leading" secondItem="U95-XT-0p4" secondAttribute="trailing" constant="8" symbolic="YES" id="dl9-np-Oom"/>
-                                                <constraint firstItem="wES-eo-inA" firstAttribute="baseline" secondItem="Gvf-WW-eZA" secondAttribute="baseline" id="dm9-eB-rJR"/>
-                                                <constraint firstItem="o4J-FX-jhx" firstAttribute="bottom" secondItem="cgD-VK-LYq" secondAttribute="bottomMargin" id="ehE-9a-pcI"/>
-                                                <constraint firstItem="BE2-jf-BcQ" firstAttribute="centerY" secondItem="0WZ-hf-kmj" secondAttribute="centerY" id="hP9-YS-92n"/>
-                                                <constraint firstItem="Zpn-SM-PCl" firstAttribute="trailing" secondItem="cgD-VK-LYq" secondAttribute="trailingMargin" id="iVv-i9-k94"/>
-                                                <constraint firstItem="ya0-iN-7Ad" firstAttribute="baseline" secondItem="Zpn-SM-PCl" secondAttribute="baseline" id="iWE-GQ-XdZ"/>
-                                                <constraint firstItem="AzY-Uj-RTG" firstAttribute="leading" secondItem="9by-UY-7Xq" secondAttribute="trailing" constant="2" id="ice-X9-Tgb"/>
-                                                <constraint firstItem="AzY-Uj-RTG" firstAttribute="top" secondItem="nJ9-zi-LjT" secondAttribute="bottom" constant="5" id="juR-L4-93x"/>
-                                                <constraint firstItem="wES-eo-inA" firstAttribute="leading" secondItem="Gvf-WW-eZA" secondAttribute="trailing" constant="8" symbolic="YES" id="lU3-IU-wLr"/>
-                                                <constraint firstItem="o4J-FX-jhx" firstAttribute="trailing" secondItem="Zpn-SM-PCl" secondAttribute="trailing" id="m1j-KV-MWP"/>
-                                                <constraint firstItem="AzY-Uj-RTG" firstAttribute="baseline" secondItem="Gvf-WW-eZA" secondAttribute="baseline" id="muJ-Fj-rG2"/>
-                                                <constraint firstItem="AzY-Uj-RTG" firstAttribute="baseline" secondItem="9by-UY-7Xq" secondAttribute="baseline" id="rmo-Vy-Or3"/>
-                                                <constraint firstItem="ase-up-73X" firstAttribute="baseline" secondItem="BE2-jf-BcQ" secondAttribute="baseline" id="wg1-en-VVv"/>
-                                                <constraint firstAttribute="trailing" secondItem="U95-XT-0p4" secondAttribute="trailing" constant="150" id="yQB-4c-Pkd"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -423,7 +356,6 @@ by
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                             <constraint firstItem="4jj-1N-fky" firstAttribute="top" secondItem="wSI-j6-BnL" secondAttribute="topMargin" constant="60" id="3AT-iL-pRw"/>
                             <constraint firstItem="X6O-DR-Rfd" firstAttribute="top" secondItem="4jj-1N-fky" secondAttribute="bottom" id="6CH-0L-hSl"/>
                             <constraint firstItem="X6O-DR-Rfd" firstAttribute="bottom" secondItem="pXV-hS-Wmu" secondAttribute="top" id="SJv-sP-MQ6"/>
@@ -431,15 +363,6 @@ by
                             <constraint firstAttribute="trailing" secondItem="4jj-1N-fky" secondAttribute="trailing" id="br9-zd-5Id"/>
                             <constraint firstItem="4jj-1N-fky" firstAttribute="trailing" secondItem="X6O-DR-Rfd" secondAttribute="trailing" id="d9D-Jo-qEP"/>
                             <constraint firstItem="4jj-1N-fky" firstAttribute="leading" secondItem="X6O-DR-Rfd" secondAttribute="leading" id="hR6-TH-xBK"/>
-=======
-                            <constraint firstItem="4jj-1N-fky" firstAttribute="trailing" secondItem="X6O-DR-Rfd" secondAttribute="trailing" id="3eb-7I-UBJ"/>
-                            <constraint firstItem="4jj-1N-fky" firstAttribute="leading" secondItem="wSI-j6-BnL" secondAttribute="leading" id="DIt-Ep-VBp"/>
-                            <constraint firstItem="X6O-DR-Rfd" firstAttribute="top" secondItem="4jj-1N-fky" secondAttribute="bottom" id="DK5-rO-52f"/>
-                            <constraint firstItem="X6O-DR-Rfd" firstAttribute="bottom" secondItem="pXV-hS-Wmu" secondAttribute="top" id="JbG-Ax-tu0"/>
-                            <constraint firstItem="4jj-1N-fky" firstAttribute="leading" secondItem="X6O-DR-Rfd" secondAttribute="leading" id="Mcu-EQ-gQR"/>
-                            <constraint firstAttribute="trailing" secondItem="4jj-1N-fky" secondAttribute="trailing" id="XU7-4h-BCa"/>
-                            <constraint firstItem="4jj-1N-fky" firstAttribute="top" secondItem="wSI-j6-BnL" secondAttribute="topMargin" constant="60" id="ofi-Uh-ldK"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="AppName" id="Zwt-Yy-0c5">
@@ -604,7 +527,6 @@ by
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                             <constraint firstItem="9qg-RZ-5q3" firstAttribute="bottom" secondItem="YVg-tr-xlg" secondAttribute="top" id="2z8-1m-puD"/>
                             <constraint firstItem="zvH-9T-yKf" firstAttribute="width" secondItem="9qg-RZ-5q3" secondAttribute="height" multiplier="375:518" id="ASY-MN-gXf"/>
                             <constraint firstItem="zvH-9T-yKf" firstAttribute="top" secondItem="ZO0-Xf-wjd" secondAttribute="bottom" id="BpE-fZ-E8M"/>
@@ -614,15 +536,6 @@ by
                             <constraint firstItem="YVg-tr-xlg" firstAttribute="top" secondItem="zvH-9T-yKf" secondAttribute="bottom" constant="514" id="bdF-nz-vfR"/>
                             <constraint firstItem="zvH-9T-yKf" firstAttribute="trailing" secondItem="9qg-RZ-5q3" secondAttribute="trailing" id="fKF-jT-49P"/>
                             <constraint firstItem="zvH-9T-yKf" firstAttribute="leading" secondItem="9qg-RZ-5q3" secondAttribute="leading" id="xyU-Ag-H0j"/>
-=======
-                            <constraint firstItem="9qg-RZ-5q3" firstAttribute="top" secondItem="fRM-4D-j7K" secondAttribute="bottom" id="1hX-44-J52"/>
-                            <constraint firstItem="9qg-RZ-5q3" firstAttribute="bottom" secondItem="YVg-tr-xlg" secondAttribute="top" id="1lX-kg-5KY"/>
-                            <constraint firstItem="fRM-4D-j7K" firstAttribute="top" secondItem="ZO0-Xf-wjd" secondAttribute="bottom" id="F04-0V-zUc"/>
-                            <constraint firstItem="fRM-4D-j7K" firstAttribute="leading" secondItem="9qg-RZ-5q3" secondAttribute="leading" id="FCE-f5-I7L"/>
-                            <constraint firstItem="fRM-4D-j7K" firstAttribute="trailing" secondItem="9qg-RZ-5q3" secondAttribute="trailing" id="Gq4-Fd-XH8"/>
-                            <constraint firstAttribute="trailing" secondItem="fRM-4D-j7K" secondAttribute="trailing" id="JpS-b7-hcL"/>
-                            <constraint firstItem="fRM-4D-j7K" firstAttribute="leading" secondItem="zC2-U9-yWW" secondAttribute="leading" id="SJ9-9v-o25"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uBO-wU-YGC"/>
@@ -750,23 +663,10 @@ by
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p30-Yf-cR8">
                                 <rect key="frame" x="0.0" y="8" width="375" height="40"/>
                                 <subviews>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXo-in-icv">
                                         <rect key="frame" x="8" y="5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="zNE-f5-9k0"/>
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다승 순위" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKq-lp-6Zd">
-                                        <rect key="frame" x="112" y="9" width="119" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXo-in-icv">
-                                        <rect key="frame" x="8" y="5" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="DWJ-rg-vrh"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                         </constraints>
                                         <state key="normal" backgroundImage="arrow-big-1"/>
                                         <connections>
@@ -789,7 +689,6 @@ by
                                 </subviews>
                                 <color key="backgroundColor" red="0.2321638372" green="1" blue="0.20616384679999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                     <constraint firstItem="gKq-lp-6Zd" firstAttribute="centerX" secondItem="p30-Yf-cR8" secondAttribute="centerX" id="Dig-6x-mjL"/>
                                     <constraint firstItem="gKq-lp-6Zd" firstAttribute="top" secondItem="p30-Yf-cR8" secondAttribute="topMargin" id="FgL-oG-WdL"/>
                                     <constraint firstItem="UXo-in-icv" firstAttribute="top" secondItem="rfe-2d-yMU" secondAttribute="top" id="Ljd-hh-Rl0"/>
@@ -805,34 +704,13 @@ by
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M8M-T3-TYS">
                                 <rect key="frame" x="16" y="234" width="343" height="312"/>
-=======
-                                    <constraint firstItem="UXo-in-icv" firstAttribute="centerY" secondItem="gKq-lp-6Zd" secondAttribute="centerY" id="AGf-ud-duj"/>
-                                    <constraint firstItem="rfe-2d-yMU" firstAttribute="baseline" secondItem="UXo-in-icv" secondAttribute="baseline" id="Lej-m8-3Ph"/>
-                                    <constraint firstItem="gKq-lp-6Zd" firstAttribute="bottom" secondItem="p30-Yf-cR8" secondAttribute="bottomMargin" id="Spq-KJ-f39"/>
-                                    <constraint firstItem="UXo-in-icv" firstAttribute="centerY" secondItem="p30-Yf-cR8" secondAttribute="centerY" id="Vnz-WK-fLA"/>
-                                    <constraint firstItem="UXo-in-icv" firstAttribute="top" secondItem="p30-Yf-cR8" secondAttribute="top" constant="5" id="Xgq-mX-mdn"/>
-                                    <constraint firstItem="UXo-in-icv" firstAttribute="leading" secondItem="p30-Yf-cR8" secondAttribute="leadingMargin" id="b7v-Kc-pul"/>
-                                    <constraint firstItem="gKq-lp-6Zd" firstAttribute="leading" secondItem="UXo-in-icv" secondAttribute="trailing" constant="74" id="g4Q-SA-HqK"/>
-                                    <constraint firstItem="gKq-lp-6Zd" firstAttribute="centerX" secondItem="p30-Yf-cR8" secondAttribute="centerX" id="jKp-0a-nWj"/>
-                                    <constraint firstItem="rfe-2d-yMU" firstAttribute="firstBaseline" secondItem="UXo-in-icv" secondAttribute="firstBaseline" id="l7U-tg-T37"/>
-                                    <constraint firstItem="UXo-in-icv" firstAttribute="top" secondItem="rfe-2d-yMU" secondAttribute="top" id="tZi-vC-iTb"/>
-                                    <constraint firstItem="rfe-2d-yMU" firstAttribute="trailing" secondItem="p30-Yf-cR8" secondAttribute="trailingMargin" id="wKK-GY-cG1"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M8M-T3-TYS">
-                                <rect key="frame" x="16" y="56" width="343" height="470"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pitcherRankCell" id="B3P-AI-Xah" customClass="PitcherRankTableViewCell" customModule="kbo_3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B3P-AI-Xah" id="9da-nT-Oxv">
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
-=======
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmq-wH-o9z">
@@ -844,52 +722,32 @@ by
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Db-eD-A2D">
                                                     <rect key="frame" x="65" y="8" width="120" height="27"/>
-=======
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Db-eD-A2D">
-                                                    <rect key="frame" x="66" y="8" width="102" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="102" id="39Z-NK-duT"/>
-                                                        <constraint firstAttribute="width" constant="47" id="ibz-2C-nsI"/>
-                                                    </constraints>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숫자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FH-xN-MOJ">
                                                     <rect key="frame" x="262" y="8" width="73" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="73" id="W4l-8f-a38"/>
                                                     </constraints>
-=======
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVY-Ac-1vI">
-                                                    <rect key="frame" x="116" y="8" width="170" height="27"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVY-Ac-1vI">
                                                     <rect key="frame" x="193" y="8" width="52" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="52" id="X4g-w9-RA3"/>
                                                     </constraints>
-=======
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숫자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FH-xN-MOJ">
-                                                    <rect key="frame" x="143" y="8" width="192" height="27"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                                 <constraint firstItem="3Db-eD-A2D" firstAttribute="leading" secondItem="wmq-wH-o9z" secondAttribute="trailing" constant="7" id="0Fz-RX-Xcg"/>
                                                 <constraint firstItem="wmq-wH-o9z" firstAttribute="leading" secondItem="9da-nT-Oxv" secondAttribute="leadingMargin" id="1uB-yl-rCE"/>
                                                 <constraint firstItem="wmq-wH-o9z" firstAttribute="baseline" secondItem="3Db-eD-A2D" secondAttribute="baseline" id="6vA-Vy-BHO"/>
@@ -903,24 +761,6 @@ by
                                                 <constraint firstItem="6FH-xN-MOJ" firstAttribute="leading" secondItem="LVY-Ac-1vI" secondAttribute="trailing" constant="17" id="idN-EE-axX"/>
                                                 <constraint firstItem="LVY-Ac-1vI" firstAttribute="baseline" secondItem="6FH-xN-MOJ" secondAttribute="baseline" id="spa-bx-FHI"/>
                                                 <constraint firstItem="wmq-wH-o9z" firstAttribute="bottom" secondItem="9da-nT-Oxv" secondAttribute="bottomMargin" id="z2F-vI-jQb"/>
-=======
-                                                <constraint firstAttribute="trailingMargin" secondItem="LVY-Ac-1vI" secondAttribute="trailing" constant="49" id="0rz-3d-fpE"/>
-                                                <constraint firstItem="6FH-xN-MOJ" firstAttribute="trailing" secondItem="9da-nT-Oxv" secondAttribute="trailingMargin" id="1zh-rZ-VvA"/>
-                                                <constraint firstItem="3Db-eD-A2D" firstAttribute="firstBaseline" secondItem="wmq-wH-o9z" secondAttribute="firstBaseline" id="3Nf-hu-son"/>
-                                                <constraint firstItem="LVY-Ac-1vI" firstAttribute="baseline" secondItem="3Db-eD-A2D" secondAttribute="baseline" id="63w-lh-Fm0"/>
-                                                <constraint firstItem="6FH-xN-MOJ" firstAttribute="leading" secondItem="wmq-wH-o9z" secondAttribute="trailing" constant="85" id="67w-vP-KGJ"/>
-                                                <constraint firstItem="wmq-wH-o9z" firstAttribute="leading" secondItem="9da-nT-Oxv" secondAttribute="leadingMargin" id="Eas-mg-own"/>
-                                                <constraint firstItem="wmq-wH-o9z" firstAttribute="bottom" secondItem="9da-nT-Oxv" secondAttribute="bottomMargin" id="G4M-e3-p3B"/>
-                                                <constraint firstItem="6FH-xN-MOJ" firstAttribute="leading" secondItem="3Db-eD-A2D" secondAttribute="trailing" constant="30" id="G93-e0-882"/>
-                                                <constraint firstItem="wmq-wH-o9z" firstAttribute="top" secondItem="9da-nT-Oxv" secondAttribute="topMargin" id="Oz6-KH-9Ja"/>
-                                                <constraint firstItem="3Db-eD-A2D" firstAttribute="leading" secondItem="wmq-wH-o9z" secondAttribute="trailing" constant="8" symbolic="YES" id="Qhg-97-urG"/>
-                                                <constraint firstItem="6FH-xN-MOJ" firstAttribute="baseline" secondItem="LVY-Ac-1vI" secondAttribute="baseline" id="VMm-7F-Fx1"/>
-                                                <constraint firstItem="6FH-xN-MOJ" firstAttribute="firstBaseline" secondItem="LVY-Ac-1vI" secondAttribute="firstBaseline" id="e8u-7d-G5Z"/>
-                                                <constraint firstItem="LVY-Ac-1vI" firstAttribute="leading" secondItem="wmq-wH-o9z" secondAttribute="trailing" constant="58" id="f7P-tP-4hW"/>
-                                                <constraint firstItem="LVY-Ac-1vI" firstAttribute="leading" secondItem="3Db-eD-A2D" secondAttribute="trailing" constant="3" id="hM4-Ut-k5n"/>
-                                                <constraint firstItem="LVY-Ac-1vI" firstAttribute="firstBaseline" secondItem="3Db-eD-A2D" secondAttribute="firstBaseline" id="pia-RJ-Y6Y"/>
-                                                <constraint firstItem="3Db-eD-A2D" firstAttribute="baseline" secondItem="wmq-wH-o9z" secondAttribute="baseline" id="ymr-py-sIr"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -936,7 +776,6 @@ by
                                     <outlet property="delegate" destination="bxQ-cb-rWW" id="UGA-0V-Rau"/>
                                 </connections>
                             </tableView>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j66-lg-7aC">
                                 <rect key="frame" x="45" y="81" width="115" height="135"/>
                                 <color key="backgroundColor" red="0.93993540320000002" green="0.3494596143" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1024,21 +863,6 @@ by
                     </view>
                     <connections>
                         <outlet property="PitcherImage" destination="j66-lg-7aC" id="8CQ-PH-SK6"/>
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="p30-Yf-cR8" firstAttribute="leading" secondItem="zWz-0D-U1K" secondAttribute="leadingMargin" id="1Wz-VE-u9h"/>
-                            <constraint firstItem="p30-Yf-cR8" firstAttribute="trailing" secondItem="M8M-T3-TYS" secondAttribute="trailing" id="A1g-Pm-zoU"/>
-                            <constraint firstItem="p30-Yf-cR8" firstAttribute="top" secondItem="YWF-V5-l2s" secondAttribute="bottom" constant="8" symbolic="YES" id="FJu-Vq-wSl"/>
-                            <constraint firstItem="M8M-T3-TYS" firstAttribute="top" secondItem="p30-Yf-cR8" secondAttribute="bottom" constant="8" symbolic="YES" id="W2h-zL-V4q"/>
-                            <constraint firstAttribute="bottom" secondItem="M8M-T3-TYS" secondAttribute="bottom" constant="20" symbolic="YES" id="ccY-PT-FjF"/>
-                            <constraint firstItem="p30-Yf-cR8" firstAttribute="trailing" secondItem="zWz-0D-U1K" secondAttribute="trailingMargin" id="dWc-Fc-yre"/>
-                            <constraint firstItem="p30-Yf-cR8" firstAttribute="leading" secondItem="M8M-T3-TYS" secondAttribute="leading" id="zH7-jl-5xq"/>
-                        </constraints>
-                    </view>
-                    <connections>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                         <outlet property="PitcherRankKind" destination="gKq-lp-6Zd" id="uDc-J3-EgB"/>
                         <outlet property="PitcherRankTableView" destination="M8M-T3-TYS" id="Sqw-a2-sLK"/>
                         <outlet property="RankerName" destination="2JF-tc-AvP" id="gOm-9o-giV"/>
@@ -1063,70 +887,15 @@ by
                         <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ADu-Lb-bXk">
                                 <rect key="frame" x="16" y="234" width="343" height="312"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-=======
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcp-iH-nTK">
-                                <rect key="frame" x="16" y="8" width="343" height="40"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="타율 순위" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB4-YA-ZSl">
-                                        <rect key="frame" x="112" y="9" width="119" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7s-IA-p4o">
-                                        <rect key="frame" x="8" y="5" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="bBt-gq-EsX"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="arrow-big-1"/>
-                                        <connections>
-                                            <action selector="BatterRankKindButtonBefore:" destination="hwg-Dd-TmQ" eventType="touchUpInside" id="PZw-aq-rmQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Eo-wR-rHo">
-                                        <rect key="frame" x="305" y="5" width="30" height="30"/>
-                                        <state key="normal" backgroundImage="arrow-big-2"/>
-                                        <connections>
-                                            <action selector="BatterRankKindButtonAfter:" destination="hwg-Dd-TmQ" eventType="touchUpInside" id="suT-hB-eaF"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.94378769520000005" blue="0.45818980030000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="9Eo-wR-rHo" firstAttribute="trailing" secondItem="wcp-iH-nTK" secondAttribute="trailingMargin" id="7bR-5b-Ly8"/>
-                                    <constraint firstItem="Q7s-IA-p4o" firstAttribute="centerY" secondItem="wcp-iH-nTK" secondAttribute="centerY" id="8OD-XR-tn4"/>
-                                    <constraint firstItem="Q7s-IA-p4o" firstAttribute="top" secondItem="wcp-iH-nTK" secondAttribute="top" constant="5" id="E65-9R-GcO"/>
-                                    <constraint firstItem="Q7s-IA-p4o" firstAttribute="leading" secondItem="wcp-iH-nTK" secondAttribute="leadingMargin" id="H0E-PS-on0"/>
-                                    <constraint firstItem="QB4-YA-ZSl" firstAttribute="centerX" secondItem="wcp-iH-nTK" secondAttribute="centerX" id="IH5-Iz-IjE"/>
-                                    <constraint firstItem="Q7s-IA-p4o" firstAttribute="top" secondItem="9Eo-wR-rHo" secondAttribute="top" id="U49-3c-DiH"/>
-                                    <constraint firstItem="QB4-YA-ZSl" firstAttribute="bottom" secondItem="wcp-iH-nTK" secondAttribute="bottomMargin" id="Ukz-Q4-ahV"/>
-                                    <constraint firstItem="9Eo-wR-rHo" firstAttribute="firstBaseline" secondItem="Q7s-IA-p4o" secondAttribute="firstBaseline" id="Wh5-2O-c7Q"/>
-                                    <constraint firstItem="Q7s-IA-p4o" firstAttribute="centerY" secondItem="QB4-YA-ZSl" secondAttribute="centerY" id="ZlO-j6-4Ah"/>
-                                    <constraint firstItem="QB4-YA-ZSl" firstAttribute="leading" secondItem="Q7s-IA-p4o" secondAttribute="trailing" constant="74" id="uFg-Zd-sCF"/>
-                                    <constraint firstItem="9Eo-wR-rHo" firstAttribute="baseline" secondItem="Q7s-IA-p4o" secondAttribute="baseline" id="z20-TX-3iU"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ADu-Lb-bXk">
-                                <rect key="frame" x="140" y="56" width="220" height="470"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="k6s-gx-lj5"/>
-                                </constraints>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="batterRankCell" id="rzx-jF-oTS" customClass="BatterRankTableViewCell" customModule="kbo_3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rzx-jF-oTS" id="88V-dT-1xV">
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
-=======
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43.5"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuW-0e-eh0">
@@ -1241,11 +1010,7 @@ by
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ranker" translatesAutoresizingMaskIntoConstraints="NO" id="JTa-1O-RXv">
                                 <rect key="frame" x="74" y="49" width="56" height="31"/>
                                 <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                                     <constraint firstAttribute="width" constant="56" id="IVI-Gw-ch5"/>
-=======
-                                    <constraint firstAttribute="width" constant="125" id="URx-rE-bSI"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INW-9c-LVb">
@@ -1290,7 +1055,6 @@ by
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-<<<<<<< HEAD:KBO/KBO/kbo_3/Base.lproj/Main.storyboard
                             <constraint firstItem="JTa-1O-RXv" firstAttribute="top" secondItem="wcp-iH-nTK" secondAttribute="bottom" constant="1" id="2Vl-tO-qZJ"/>
                             <constraint firstItem="IXj-pB-qCU" firstAttribute="baseline" secondItem="G2s-Fn-m0s" secondAttribute="baseline" id="38f-kV-wLd"/>
                             <constraint firstItem="JTa-1O-RXv" firstAttribute="centerX" secondItem="j2c-zq-FlA" secondAttribute="centerX" id="5F6-lE-Isl"/>
@@ -1322,17 +1086,6 @@ by
                             <constraint firstItem="ADu-Lb-bXk" firstAttribute="leading" secondItem="hzy-Lo-SDJ" secondAttribute="leadingMargin" id="xUb-vM-SdT"/>
                             <constraint firstItem="pQe-nA-Mmc" firstAttribute="baseline" secondItem="KOa-LZ-Jxn" secondAttribute="baseline" id="xeH-IW-sfL"/>
                             <constraint firstItem="j2c-zq-FlA" firstAttribute="top" secondItem="INW-9c-LVb" secondAttribute="top" id="xjB-UA-Ku6"/>
-=======
-                            <constraint firstItem="wcp-iH-nTK" firstAttribute="leading" secondItem="95f-ti-t8r" secondAttribute="leading" id="0fy-F8-cF9"/>
-                            <constraint firstAttribute="bottom" secondItem="ADu-Lb-bXk" secondAttribute="bottom" constant="20" symbolic="YES" id="5Mg-sO-Vud"/>
-                            <constraint firstItem="95f-ti-t8r" firstAttribute="centerY" secondItem="ADu-Lb-bXk" secondAttribute="centerY" id="C4n-uu-Wum"/>
-                            <constraint firstItem="ADu-Lb-bXk" firstAttribute="top" secondItem="wcp-iH-nTK" secondAttribute="bottom" constant="8" symbolic="YES" id="IV5-Kh-bgX"/>
-                            <constraint firstItem="wcp-iH-nTK" firstAttribute="leading" secondItem="hzy-Lo-SDJ" secondAttribute="leadingMargin" id="Nd6-xj-d5O"/>
-                            <constraint firstItem="wcp-iH-nTK" firstAttribute="trailing" secondItem="ADu-Lb-bXk" secondAttribute="trailing" id="YyG-8W-K0E"/>
-                            <constraint firstItem="wcp-iH-nTK" firstAttribute="top" secondItem="JQ6-v3-AFc" secondAttribute="bottom" constant="8" symbolic="YES" id="qbj-IF-2oY"/>
-                            <constraint firstItem="eh6-lf-Znd" firstAttribute="top" secondItem="95f-ti-t8r" secondAttribute="bottom" constant="160" id="tNW-cw-v0T"/>
-                            <constraint firstItem="wcp-iH-nTK" firstAttribute="trailing" secondItem="hzy-Lo-SDJ" secondAttribute="trailingMargin" id="wqS-tL-UbI"/>
->>>>>>> ee25349df0b43c27e215a8b520a6e34e9b620af7:KBO/kbo_3/Base.lproj/Main.storyboard
                         </constraints>
                     </view>
                     <connections>
