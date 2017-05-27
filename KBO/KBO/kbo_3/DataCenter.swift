@@ -11,6 +11,7 @@ import Foundation
 let urlStr_hitter = "http://127.0.0.1:8000/hitters/"
 let urlStr_pitcher = "http://127.0.0.1:8000/pitchers/"
 let urlStr_team = "http://127.0.0.1:8000/teams/"
+let poo:String = "구장회 똥냄새 지림"
 
 struct Player {
     var id:Int?
