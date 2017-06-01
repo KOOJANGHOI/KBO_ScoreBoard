@@ -104,6 +104,7 @@ extension Tab_2_ViewController: UITableViewDataSource{
         UITableViewCell {
             let cell = RankTableView.dequeueReusableCell(withIdentifier: "teamRankCell", for: indexPath) as? teamRankTableViewCell
             if indexPath.row == 0 {
+                cell?.TeamLogo.image = nil
                 cell?.TeamName.text = "팀명"
                 cell?.WinNum.text = "승"
                 cell?.LoseNum.text = "패"

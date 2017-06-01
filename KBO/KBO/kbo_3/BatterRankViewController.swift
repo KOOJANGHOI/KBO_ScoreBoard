@@ -48,6 +48,7 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var RankerNum: UILabel!
     // 타자 1등 소속팀
     @IBOutlet weak var RankerTeam: UILabel!
+    
     // 타자 1등 이름
     @IBOutlet weak var RankerName: UILabel!
     // 타자 1등 기록(종류)
@@ -66,18 +67,30 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
                 hitters[i].rank=rank
                 rank=rank+1
             }
+            RankerNum.text = String(hitters[0].homerun!)
+            RankerTeam.text = hitters[0].team
+            RankerName.text = hitters[0].name
+            filterName.text = "홈런"
         } else if OtherKindButton == 1 {
             hitters.sort(by: { $0.point! > $1.point!})
             for i in 0..<hitters.count {
                 hitters[i].rank=rank
                 rank=rank+1
             }
+            RankerNum.text = String(hitters[0].point!)
+            RankerTeam.text = hitters[0].team
+            RankerName.text = hitters[0].name
+            filterName.text = "타점"
         } else {
             hitters.sort(by: { $0.rate! > $1.rate!})
             for i in 0..<hitters.count {
                 hitters[i].rank=rank
                 rank=rank+1
             }
+            RankerNum.text = String(hitters[0].rate!)
+            RankerTeam.text = hitters[0].team
+            RankerName.text = hitters[0].name
+            filterName.text = "타율"
         }
         
     }
@@ -94,18 +107,30 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
                 hitters[i].rank=rank
                 rank=rank+1
             }
+            RankerNum.text = String(hitters[0].homerun!)
+            RankerTeam.text = hitters[0].team
+            RankerName.text = hitters[0].name
+            filterName.text = "홈런"
         } else if OtherKindButton == 1 {
             hitters.sort(by: { $0.point! > $1.point!})
             for i in 0..<hitters.count {
                 hitters[i].rank=rank
                 rank=rank+1
             }
+            RankerNum.text = String(hitters[0].point!)
+            RankerTeam.text = hitters[0].team
+            RankerName.text = hitters[0].name
+            filterName.text = "타점"
         } else {
             hitters.sort(by: { $0.rate! > $1.rate!})
             for i in 0..<hitters.count {
                 hitters[i].rank=rank
                 rank=rank+1
             }
+            RankerNum.text = String(hitters[0].rate!)
+            RankerTeam.text = hitters[0].team
+            RankerName.text = hitters[0].name
+            filterName.text = "타율"
         }
 
         OtherKindButton = 2
@@ -176,12 +201,12 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
 
 extension BatterRankViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hitters.count
+        return hitters.count-1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
             let cell = BatterRankTableView.dequeueReusableCell(withIdentifier: "batterRankCell", for: indexPath) as? BatterRankTableViewCell
-            let hitter = hitters[indexPath.row]
+            let hitter = hitters[indexPath.row+1]
             
             cell?.BatterName.text = hitter.name
             

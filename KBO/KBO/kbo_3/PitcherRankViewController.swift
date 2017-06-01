@@ -43,16 +43,22 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
     var OtherKindButton:Int = 0
     //투수 순위 이름
     @IBOutlet weak var PitcherRankKind: UILabel!
+  
     // 투수 1등 사진
     @IBOutlet weak var PitcherImage: UIImageView!
+    
     //투수 순위 테이블 뷰
     @IBOutlet weak var PitcherRankTableView: UITableView!
+    
     // 투수 1등 기록(종류)
     @IBOutlet weak var filterName: UILabel!
+    
     // 투수 1등 이름
     @IBOutlet weak var RankerName: UILabel!
+    
     // 투수 1등 소속팀
     @IBOutlet weak var RankerTeam: UILabel!
+    
     // 투수 1등 기록(숫자)
     @IBOutlet weak var RankerNum: UILabel!
     
@@ -68,18 +74,31 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
                 pitchers[i].rank=rank
                 rank=rank+1
             }
+            filterName.text = "탈삼진"
+            RankerName.text = pitchers[0].name
+            RankerTeam.text = pitchers[0].team
+            RankerNum.text = String(pitchers[0].so!)
+
         } else if OtherKindButton == 1 {
             pitchers.sort(by: { $0.era! < $1.era!})
             for i in 0..<pitchers.count {
                 pitchers[i].rank=rank
                 rank=rank+1
             }
+            filterName.text = "평균자책"
+            RankerName.text = pitchers[0].name
+            RankerTeam.text = pitchers[0].team
+            RankerNum.text = String(pitchers[0].era!)
         } else {
             pitchers.sort(by: { $0.win! > $1.win!})
             for i in 0..<pitchers.count {
                 pitchers[i].rank=rank
                 rank=rank+1
             }
+            filterName.text = "탈삼진"
+            RankerName.text = pitchers[0].name
+            RankerTeam.text = pitchers[0].team
+            RankerNum.text = String(pitchers[0].win!)
         }
         PitcherRankTableView.reloadData()
         
@@ -100,29 +119,42 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
                 pitchers[i].rank=rank
                 rank=rank+1
             }
+            filterName.text = "탈삼진"
+            RankerName.text = pitchers[0].name
+            RankerTeam.text = pitchers[0].team
+            RankerNum.text = String(pitchers[0].so!)
         } else if OtherKindButton == 1 {
             pitchers.sort(by: { $0.era! < $1.era!})
             for i in 0..<pitchers.count {
                 pitchers[i].rank=rank
                 rank=rank+1
             }
+            filterName.text = "평균자책"
+            RankerName.text = pitchers[0].name
+            RankerTeam.text = pitchers[0].team
+            RankerNum.text = String(pitchers[0].era!)
         } else {
             pitchers.sort(by: { $0.win! > $1.win!})
             for i in 0..<pitchers.count {
                 pitchers[i].rank=rank
                 rank=rank+1
             }
+            filterName.text = "탈삼진"
+            RankerName.text = pitchers[0].name
+            RankerTeam.text = pitchers[0].team
+            RankerNum.text = String(pitchers[0].win!)
         }
         PitcherRankTableView.reloadData()
+        
+
         
         PitcherRankTableView.dataSource = self
         PitcherRankTableView.delegate = self
         // 3으로 초기화
         OtherKindButton = 2
         // Do any additional setup after loading the view.
-        
-     
 
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -188,12 +220,12 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
 
 extension PitcherRankViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pitchers.count
+        return pitchers.count-1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
              let cell = PitcherRankTableView.dequeueReusableCell(withIdentifier: "pitcherRankCell", for: indexPath) as? PitcherRankTableViewCell
-        let pitcher = pitchers[indexPath.row]
+        let pitcher = pitchers[indexPath.row+1]
         cell?.PitcherName.text = pitcher.name
          
             if OtherKindButton == 0 {
