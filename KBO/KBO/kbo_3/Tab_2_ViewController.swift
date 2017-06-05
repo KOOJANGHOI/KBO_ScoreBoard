@@ -36,7 +36,7 @@ class Tab_2_ViewController: UIViewController, UITableViewDelegate {
             
         }
     }
-    
+
     // 구단순위 테이블 뷰
     @IBOutlet weak var RankTableView: UITableView!
     
@@ -119,6 +119,25 @@ extension Tab_2_ViewController: UITableViewDataSource{
                     return cell!
                 }
                 cell?.TeamName.text = team.name
+                switch team.name! {
+                case "삼성":
+                    cell?.TeamLogo.image = #imageLiteral(resourceName: "SAMSUNG")
+                case "넥센":
+                    cell?.TeamLogo.image = #imageLiteral(resourceName: "NEXEN")
+                case "두산":
+                    cell?.TeamLogo.image = #imageLiteral(resourceName: "DOOSAN")
+                case "롯데":
+                    cell?.TeamLogo.image = #imageLiteral(resourceName: "LOTTE")
+                case "한화":
+                    cell?.TeamLogo.image = #imageLiteral(resourceName: "HANHWA")
+                default:
+                    cell?.TeamLogo.image = UIImage(named: team.name!)
+
+                }
+                //cell?.TeamLogo.image = UIImage(named: team.name!)
+            
+                
+                
                 cell?.WinNum.text = String(team.win!)
                 cell?.LoseNum.text = String(team.lose!)
                 cell?.DrawNum.text = String(team.draw!)
