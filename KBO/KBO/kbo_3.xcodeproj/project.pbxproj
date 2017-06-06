@@ -14,6 +14,8 @@
 		370D742C1EBE18A2009F7F46 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D742B1EBE18A2009F7F46 /* ScheduleTableViewCell.swift */; };
 		370D742E1EBE226E009F7F46 /* PitcherRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D742D1EBE226E009F7F46 /* PitcherRankTableViewCell.swift */; };
 		370D74301EBE239D009F7F46 /* BatterRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370D742F1EBE239D009F7F46 /* BatterRankTableViewCell.swift */; };
+		374113C71EE6CF620019FE23 /* PredictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374113C61EE6CF620019FE23 /* PredictViewController.swift */; };
+		374113C91EE6CF710019FE23 /* PredictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374113C81EE6CF710019FE23 /* PredictView.swift */; };
 		374939011EE6BC000078F24B /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374939001EE6BC000078F24B /* ApplyViewController.swift */; };
 		374939031EE6BC130078F24B /* ApplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374939021EE6BC130078F24B /* ApplyView.swift */; };
 		374E57581EBD9D2300EEF4F4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374E57571EBD9D2300EEF4F4 /* InfoViewController.swift */; };
@@ -60,6 +62,8 @@
 		370D742B1EBE18A2009F7F46 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		370D742D1EBE226E009F7F46 /* PitcherRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitcherRankTableViewCell.swift; sourceTree = "<group>"; };
 		370D742F1EBE239D009F7F46 /* BatterRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatterRankTableViewCell.swift; sourceTree = "<group>"; };
+		374113C61EE6CF620019FE23 /* PredictViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictViewController.swift; sourceTree = "<group>"; };
+		374113C81EE6CF710019FE23 /* PredictView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictView.swift; sourceTree = "<group>"; };
 		374939001EE6BC000078F24B /* ApplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		374939021EE6BC130078F24B /* ApplyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyView.swift; sourceTree = "<group>"; };
 		374E57571EBD9D2300EEF4F4 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 			children = (
 				37BAD3F71EBCB62F00DEBF51 /* AppDelegate.swift */,
 				37BAD3FB1EBCB62F00DEBF51 /* Main.storyboard */,
+				374113C61EE6CF620019FE23 /* PredictViewController.swift */,
+				374113C81EE6CF710019FE23 /* PredictView.swift */,
 				374939001EE6BC000078F24B /* ApplyViewController.swift */,
 				374939021EE6BC130078F24B /* ApplyView.swift */,
 				370D742F1EBE239D009F7F46 /* BatterRankTableViewCell.swift */,
@@ -485,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374113C71EE6CF620019FE23 /* PredictViewController.swift in Sources */,
 				370D742A1EBE12F9009F7F46 /* teamRankTableViewCell.swift in Sources */,
 				37BAD42A1EBCB6AC00DEBF51 /* Tab_3_ViewController.swift in Sources */,
 				37BAD42C1EBCB6B300DEBF51 /* Tab_4_ViewController.swift in Sources */,
@@ -496,6 +503,7 @@
 				0BCCE7DB1ED6B94400231152 /* DataCenter.swift in Sources */,
 				370D742C1EBE18A2009F7F46 /* ScheduleTableViewCell.swift in Sources */,
 				374939031EE6BC130078F24B /* ApplyView.swift in Sources */,
+				374113C91EE6CF710019FE23 /* PredictView.swift in Sources */,
 				374E57581EBD9D2300EEF4F4 /* InfoViewController.swift in Sources */,
 				374939011EE6BC000078F24B /* ApplyViewController.swift in Sources */,
 				370D74281EBE1141009F7F46 /* BatterRankViewController.swift in Sources */,
