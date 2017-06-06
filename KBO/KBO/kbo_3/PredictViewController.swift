@@ -12,10 +12,13 @@ class PredictViewController: UIViewController {
 
     @IBOutlet weak var predictSegment: UISegmentedControl!
     var result:Int = 0
+    var gameNum:Int = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("")
+        print(gameNum)
         // Do any additional setup after loading the view.
     }
 
@@ -27,13 +30,15 @@ class PredictViewController: UIViewController {
     @IBAction func predictSegmentClick(_ sender: Any) {
         if(predictSegment.selectedSegmentIndex == 0) // 원정팀 승
         {
-            result = 0
-            print("0")
+            result = -1
         }
         else if(predictSegment.selectedSegmentIndex == 1) // 홈팀 승
         {
+            result = 0
+        }
+        else if(predictSegment.selectedSegmentIndex == 2) // 홈팀 승
+        {
             result = 1
-            print("1")
         }
     }
     
@@ -41,11 +46,13 @@ class PredictViewController: UIViewController {
     @IBAction func predictYes(_ sender: Any) {
         // 선택 후 이벤트
         print("yes")
+        print(gameNum)
         dismiss(animated: true, completion: nil)
     }
     // 예측 버튼 No
     @IBAction func predictNo(_ sender: Any) {
         print("no")
+        print(gameNum)
         dismiss(animated: true, completion: nil)
     }
     

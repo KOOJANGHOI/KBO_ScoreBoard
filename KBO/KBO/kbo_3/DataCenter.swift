@@ -7,21 +7,21 @@
 //
 
 import Foundation
-let urlStr_hitter = "http://172.16.186.162:8000/hitters/"
-let urlStr_pitcher = "http://172.16.186.162:8000/pitchers/"
-let urlStr_team = "http://172.16.186.162:8000/teams/"
-let urlStr_schedule = "http://172.16.186.162:8000/schedules/"
-let urlStr_autheticate = "http://172.16.186.162:8000/authenticate/?username="
-let urlStr_predict = "http://172.16.186.162:8000/predict/"
-let urlStr_entry = "http://172.16.186.162:8000/entry/?username="
+//let urlStr_hitter = "http://172.16.186.162:8000/hitters/"
+//let urlStr_pitcher = "http://172.16.186.162:8000/pitchers/"
+//let urlStr_team = "http://172.16.186.162:8000/teams/"
+//let urlStr_schedule = "http://172.16.186.162:8000/schedules/"
+//let urlStr_autheticate = "http://172.16.186.162:8000/authenticate/?username="
+//let urlStr_predict = "http://172.16.186.162:8000/predict/"
+//let urlStr_entry = "http://172.16.186.162:8000/entry/?username="
 
-//let urlStr_hitter = "http://127.0.0.1:8000/hitters?username="
-//let urlStr_pitcher = "http://127.0.0.1:8000/pitchers?username="
-//let urlStr_team = "http://127.0.0.1:8000/teams?username="
-//let urlStr_schedule = "http://127.0.0.1:8000/schedules/"
-//let urlStr_autheticate = "http://127.0.0.1:8000/authenticate/?username="
-//let urlStr_predict = "http://127.0.0.1:8000/predict/"
-
+let urlStr_hitter = "http://127.0.0.1:8000/hitters?username="
+let urlStr_pitcher = "http://127.0.0.1:8000/pitchers?username="
+let urlStr_team = "http://127.0.0.1:8000/teams?username="
+let urlStr_schedule = "http://127.0.0.1:8000/schedules/"
+let urlStr_autheticate = "http://127.0.0.1:8000/authenticate/?username="
+let urlStr_predict = "http://127.0.0.1:8000/predict/"
+let urlStr_entry = "http://127.0.0.1:8000/entry/?username="
 let poo:String = "구장회 똥냄새 지림"
 
 var ticketNumber = 0

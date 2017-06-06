@@ -8,8 +8,9 @@
 
 import UIKit
 
-class Tab_1_ViewController: UIViewController, UITableViewDelegate {
+class Tab_1_ViewController: UIViewController, UITableViewDelegate{
 
+    var valueToPass:Int = 0
     var index:Int = 3
     let date = Date()
     let ago1 = Calendar.current.date(byAdding: .day, value: -1, to: Date())
@@ -231,9 +232,8 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
 
 }
 
-
 extension Tab_1_ViewController: UITableViewDataSource{
-  
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return week[index].count
     }
@@ -245,7 +245,6 @@ extension Tab_1_ViewController: UITableViewDataSource{
            // let schedule = schedules[indexPath.row]
             
             let schedule = week[index][indexPath.row]
-            
             
             cell?.HomeTeamName.text = schedule.home_team
             if schedule.home_score != nil {
@@ -265,5 +264,29 @@ extension Tab_1_ViewController: UITableViewDataSource{
            return cell!
         
     }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        let indexPath = ScheduleTableView.indexPathForSelectedRow;
+        
+        valueToPass = schedules[(indexPath?.row)!].gameId!
+        performSegue(withIdentifier: "predictSegug", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PredictViewController {
+            let cell = sender as! UITableViewCell
+            let selectedRow = ScheduleTableView.indexPath(for: cell)!.row
+            destination.gameNum = schedules[selectedRow].gameId!
+        }
+    }
+    
+    
+    
 }
+ 
+
+
 
