@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 class Hitter(models.Model):
     name = models.CharField(max_length=110, blank=True)     # 이름
     team = models.CharField(max_length=110, blank=True)     # 팀
@@ -26,3 +25,15 @@ class Team(models.Model):
     diff = models.FloatField(default=0)         # 게임차
     rate = models.FloatField(default=0)         # 승률
 
+
+class Schedule(models.Model):
+    state = models.IntegerField(default=1)      # 1 끝남, 0 아직
+    home_team = models.CharField(max_length=110)
+    home_pitcher = models.CharField(max_length=110)
+    home_score = models.PositiveIntegerField(null=True, blank=True)
+    away_team = models.CharField(max_length=110)
+    away_pitcher = models.CharField(max_length=110)
+    away_score = models.PositiveIntegerField(null=True, blank=True)
+    stadium = models.CharField(max_length=110)
+    time = models.CharField(max_length=110)
+    day = models.CharField(max_length=110, null=True, blank=True)

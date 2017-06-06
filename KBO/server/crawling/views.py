@@ -2,10 +2,12 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from crawling.models import Hitter, Pitcher, Team
-from crawling.serializers import CrawlingSerializer, PitcherSerializer, TeamSerializer
+from crawling.models import Hitter, Pitcher, Team, Schedule
+from crawling.serializers import HitterSerializer, PitcherSerializer, TeamSerializer, ScheduleSerializer
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from datetime import datetime
+import requests
 import json
 
 
@@ -27,12 +29,12 @@ def hitter_list(request):
     """
     if request.method == 'GET':
         hitters = Hitter.objects.all()
-        serializer = CrawlingSerializer(hitters, many=True)
+        serializer = HitterSerializer(hitters, many=True)
         return JSONResponse(serializer.data)
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = CrawlingSerializer(data=data)
+        serializer = HitterSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JSONResponse(serializer.data, status=201)
@@ -78,23 +80,25 @@ def team_list(request):
 
 
 @csrf_exempt
-def hitter_detail(request, pk):
+def schedule_list(request):
     """
-    코드 조각 조회, 업데이트, 삭제
+    코드 조각을 모두 보여주거나 새 코드 조각을 만듭니다.
     """
-    try:
-        hitter = Hitter.objects.get(pk=pk)
-    except Hitter.DoesNotExist:
-        return HttpResponse(status=404)
-
     if request.method == 'GET':
-        serializer = CrawlingSerializer(hitter)
+        schedules = Schedule.objects.all()
+        serializer = ScheduleSerializer(schedules, many=True)
         return JSONResponse(serializer.data)
 
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = ScheduleSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JSONResponse(serializer.data, status=201)
+        return JSONResponse(serializer.errors, status=400)
 
 
-
-def make_database_hitter(reqeust):
+def make_database_hitter(request):
     data = urlopen('http://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx')
     soup = BeautifulSoup(data.read(), "html.parser")
 
@@ -118,6 +122,7 @@ def make_database_hitter(reqeust):
 
                 row += 1
             hitters.append(player)
+
 
     for hitter in hitters:
         try:
@@ -222,5 +227,108 @@ def make_database_team(request):
         t.diff = team['diff']
         t.rate = team['rate']
         t.save()
+
+    return HttpResponse("OK")
+
+
+def make_database_schedule(request):
+    url = 'http://www.koreabaseball.com/ws/Schedule.asmx/GetScheduleList'
+    params = {
+        "leId": 1,
+        "srIdList": '0,9',
+        "seasonId": '2017',
+        "gameMonth": '06',
+        "teamId": "",
+    }
+    response = requests.post(url, data=params)
+    js = json.loads(response.text)
+
+    cycle = 0
+    schedules = []
+    print(len(js["rows"]))
+    for rows in js["rows"]:
+        index = 0
+        schedule = {}
+        schedule['day'] = ''
+        for row in rows["row"]:
+            info = row["Text"]
+            if cycle == 0:
+                if index == 0:
+                    schedule['day'] = info
+                elif index == 1:
+                    info = info.replace('<b>', '')
+                    info = info.replace('</b>', '')
+                    schedule['time'] = info
+
+                elif index == 2:
+                    info = info.replace('<em>', "")
+                    info = info.replace('</em>', "")
+                    info = info.replace('vs', " ")
+                    info = info.replace('<span class="lose">', "")
+                    info = info.replace('<span class="win">', "")
+                    info = info.replace('</span>', "")
+                    info = info.replace('<span>', "")
+                    if len(info) == 7:
+                        schedule['home_team'] = info[0:2]
+                        schedule['home_score'] = info[2]
+                        schedule['away_team'] = info[5:7]
+                        schedule['away_score'] = info[4]
+                        schedule['state'] = 1
+                    else:
+                        schedule['away_team'] = info[0:2]
+                        schedule['home_team'] = info[3:5]
+                        schedule['state'] = 0
+
+                elif index == 7:
+                    schedule['stadium'] = info
+            else:
+                if index == 0:
+                    info = info.replace('<b>', '')
+                    info = info.replace('</b>', '')
+                    schedule['time'] = info
+                elif index == 1:
+                    info = info.replace('<em>', "")
+                    info = info.replace('</em>', "")
+                    info = info.replace('vs', " ")
+                    info = info.replace('<span class="lose">', "")
+                    info = info.replace('<span class="win">', "")
+                    info = info.replace('</span>', "")
+                    info = info.replace('<span>', "")
+                    if len(info) == 7:
+                        schedule['home_team'] = info[0:2]
+                        schedule['home_score'] = info[2]
+                        schedule['away_team'] = info[5:7]
+                        schedule['away_score'] = info[4]
+                        schedule['state'] = 1
+                    else:
+                        schedule['away_team'] = info[0:2]
+                        schedule['away_score'] = None
+                        schedule['home_team'] = info[3:5]
+                        schedule['home_score'] = None
+                        schedule['state'] = 0
+                elif index == 6:
+                    schedule['stadium'] = info
+
+            index += 1
+        schedules.append(schedule)
+        cycle = (cycle + 1) % 5
+
+    for schedule in schedules:
+        s = Schedule()
+        # s.home_pitcher = schedule["home_pitcher"]
+        s.home_team = schedule["home_team"]
+        try:
+            s.home_score = schedule["home_score"]
+            s.away_score = schedule["away_score"]
+        except:
+            pass
+        # s.away_pitcher = schedule["away_pitcher"]
+        s.away_team = schedule["away_team"]
+        s.stadium = schedule["stadium"]
+        s.time = schedule["time"]
+        s.state = schedule["state"]
+
+        s.day = schedule['day']
+        s.save()
 
     return HttpResponse("OK")
