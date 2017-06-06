@@ -29,25 +29,16 @@ class ScheduleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var GamePlace: UILabel!      // 경기 장소
     
-    // 슬라이더
-    @IBOutlet weak var mainSlider: UISlider!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        // 슬라이더 가운데 에서 시작
-        mainSlider.value = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    @IBAction func moveSlider(_ sender: Any) {
-        value = Int(mainSlider.value)
     }
     
 

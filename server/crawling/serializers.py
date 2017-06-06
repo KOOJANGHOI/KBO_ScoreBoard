@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Hitter, Pitcher, Team, Schedule
+from .models import Hitter, Pitcher, Team, Schedule, Prediction
 
 
 class HitterSerializer(serializers.ModelSerializer):
@@ -23,4 +23,10 @@ class TeamSerializer(serializers.ModelSerializer):
 class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
+        fields = '__all__'
+
+
+class PredictionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Prediction
         fields = '__all__'

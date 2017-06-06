@@ -3,8 +3,8 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from crawling.models import Hitter, Pitcher, Team, Schedule, User
-from crawling.serializers import HitterSerializer, PitcherSerializer, TeamSerializer, ScheduleSerializer
+from crawling.models import Hitter, Pitcher, Team, Schedule, User, Prediction, Gift, EntryList
+from crawling.serializers import HitterSerializer, PitcherSerializer, TeamSerializer, ScheduleSerializer, PredictionSerializer
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -37,6 +37,56 @@ def authenticate(request):
         return HttpResponse(ticket)
     else:
         return HttpResponse("fail")
+
+
+@csrf_exempt
+def prediction(request):
+    if request.method == "GET":
+        username = request.GET.get("username")
+        game_id = request.GET.get("game_id")
+        result = request.GET.get("result")
+
+        try:
+            user = User.objects.get(username=username)
+            game = Schedule.objects.get(game_id=game_id)
+        except:
+            return HttpResponse("fail")
+
+        if game.state == 1:
+            return HttpResponse("fail")
+
+        try:
+            pred = Prediction.objects.get(user=user, schedule=game)
+        except:
+            pred = Prediction(user=user, schedule=game)
+
+        pred.result = result
+        pred.save()
+
+        return HttpResponse("success")
+    return HttpResponse("fail")
+
+
+@csrf_exempt
+def entry(request):
+    if request.method == "GET":
+        username = request.GET.get("username")
+        pk = request.GET.get("number")
+
+        try:
+            user = User.objects.get(username=username)
+            gift = Gift.objects.get(pk=pk)
+        except:
+            return HttpResponse("fail")
+
+        if user.ticket <= 0:
+            return HttpResponse("fail")
+
+        entry = EntryList(user=user, gift=gift)
+        entry.count += 1
+        entry.save()
+
+    return HttpResponse("fail")
 
 
 @csrf_exempt
@@ -115,6 +165,26 @@ def schedule_list(request):
         return JSONResponse(serializer.errors, status=400)
 
 
+@csrf_exempt
+def prediction_list(request):
+    """
+    코드 조각을 모두 보여주거나 새 코드 조각을 만듭니다.
+    """
+    if request.method == 'GET':
+        user = User.objects.get(username=request.GET.get("username"))
+        predictions = Prediction.objects.filter(user=user)
+        serializer = PredictionSerializer(predictions, many=True)
+        return JSONResponse(serializer.data)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = PredictionSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JSONResponse(serializer.data, status=201)
+        return JSONResponse(serializer.errors, status=400)
+
+
 def make_database_hitter(request):
     data = urlopen('http://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx')
     soup = BeautifulSoup(data.read(), "html.parser")
@@ -139,7 +209,6 @@ def make_database_hitter(request):
 
                 row += 1
             hitters.append(player)
-
 
     for hitter in hitters:
         try:
@@ -249,6 +318,9 @@ def make_database_team(request):
 
 
 def make_database_schedule(request):
+    ss = Schedule.objects.all()
+    ss.delete()
+
     url = 'http://www.koreabaseball.com/ws/Schedule.asmx/GetScheduleList'
     params = {
         "leId": 1,
@@ -339,8 +411,10 @@ def make_database_schedule(request):
         schedules.append(schedule)
         cycle = (cycle + 1) % 5
 
+    idx = 0
     for schedule in schedules:
         s = Schedule()
+        s.game_id = idx
         # s.home_pitcher = schedule["home_pitcher"]
         s.home_team = schedule["home_team"]
         try:
@@ -356,5 +430,34 @@ def make_database_schedule(request):
 
         s.day = schedule['day']
         s.save()
+        idx += 1
+
+    return HttpResponse("OK")
+
+
+def calculate(request):
+    preds = Prediction.objects.filter(state=False)
+    for pred in preds:
+        if pred.schedule.state == 0:
+            continue
+
+        away = pred.schedule.away_score
+        home = pred.schedule.home_score
+
+        res = away - home
+        check = 0
+        if res > 0:
+            check = -1
+        elif res == 0:
+            check = 0
+        else:
+            check = 1
+
+        if pred.result == check:
+            user = pred.user
+            user.ticket += 1
+            pred.check = "success"
+            user.save()
+            pred.save()
 
     return HttpResponse("OK")
