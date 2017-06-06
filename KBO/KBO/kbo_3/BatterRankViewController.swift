@@ -12,7 +12,7 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
    
     func getFromJSON(){
         hitters.removeAll()
-        let url = URL(string: urlStr_hitter+UIDevice.current.identifierForVendor!.uuidString)!
+        let url = URL(string: urlStr_hitter)!
         let data = try! Data(contentsOf: url)
         //JSON PARSING
         if let result = try! JSONSerialization.jsonObject(with: data, options: []) as? [ [String:Any] ]

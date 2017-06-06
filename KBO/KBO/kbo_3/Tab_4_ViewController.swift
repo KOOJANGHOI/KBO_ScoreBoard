@@ -13,6 +13,7 @@ class Tab_4_ViewController: UIViewController {
     var goodsFlag:Int = 0
     @IBOutlet weak var ticketNum: UILabel!
     @IBOutlet weak var goodsImage: UIImageView!
+    var str=""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,28 @@ class Tab_4_ViewController: UIViewController {
         case 4: goodsImage.image = #imageLiteral(resourceName: "goods_5")
         default: goodsImage.image = nil
         }
-        
-        
-        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        let authenticate = URL(string: urlStr_autheticate+deviceID)!
+        
+        let task = URLSession.shared.dataTask(with: authenticate as URL) { data, response, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            self.str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
+            print((self.str as String) + " test ")
+            self.ticketNum.text = self.str
+
+            
+        }
+        
+        task.resume()
+        //self.ticketNum.text = String(ticketNumber)
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

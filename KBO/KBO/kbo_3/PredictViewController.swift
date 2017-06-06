@@ -28,20 +28,24 @@ class PredictViewController: UIViewController {
         if(predictSegment.selectedSegmentIndex == 0) // 원정팀 승
         {
             result = 0
+            print("0")
         }
         else if(predictSegment.selectedSegmentIndex == 1) // 홈팀 승
         {
             result = 1
+            print("1")
         }
     }
     
     // 예측 버튼 Yes
     @IBAction func predictYes(_ sender: Any) {
         // 선택 후 이벤트
+        print("yes")
         dismiss(animated: true, completion: nil)
     }
     // 예측 버튼 No
     @IBAction func predictNo(_ sender: Any) {
+        print("no")
         dismiss(animated: true, completion: nil)
     }
     

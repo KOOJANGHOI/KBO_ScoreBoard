@@ -32,16 +32,26 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
     
     
     func getFromJSON(){
-        schedules.removeAll()
         
         let url = URL(string: urlStr_schedule)!
-        let authenticate = URL(string: urlStr_autheticate+"?username=forybm")!
         
         let data = try! Data(contentsOf: url)
-        let data2 = try! Data(contentsOf: authenticate)
-        
 
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        let authenticate = URL(string: urlStr_autheticate+deviceID)!
+
+        let task = URLSession.shared.dataTask(with: authenticate as URL) { data, response, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
+            print((str as String) + " test ")
+            ticketNumber = Int(str as String)!
+
+        }
         
+        task.resume()
+
         //JSON PARSING
         if let result = try! JSONSerialization.jsonObject(with: data, options: []) as? [ [String:Any] ]
         {
@@ -58,7 +68,7 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
                 let away_team=one["away_team"] as? String
                 let away_score=one["away_score"] as? Int
                 let stadium = one["stadium"] as? String
-
+                let gameId = one["game_id"] as? Int
                 
                 schedule.state = state
                 schedule.time = time
@@ -68,7 +78,7 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
                 schedule.away_team = away_team
                 schedule.away_score = away_score
                 schedule.stadium = stadium
-                
+                schedule.gameId = gameId
 
                 if dateString_ago3==day {
                     week[0].append(schedule)
@@ -80,7 +90,6 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
                     week[2].append(schedule)
                 }
                 if dateString==day {
-                    schedules.append(schedule)
                     week[3].append(schedule)
                 }
                 if dateString_tomorrow1==day {
@@ -92,7 +101,8 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
                 if dateString_tomorrow3==day {
                     week[6].append(schedule)
                 }
-                
+                schedules.append(schedule)
+
             }
         }
     }

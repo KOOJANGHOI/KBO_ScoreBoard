@@ -45,7 +45,7 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
     func getFromJSON(){
         pitchers.removeAll()
         
-        let url = URL(string: urlStr_pitcher+UIDevice.current.identifierForVendor!.uuidString)!
+        let url = URL(string: urlStr_pitcher)!
         
         let data = try! Data(contentsOf: url)
         

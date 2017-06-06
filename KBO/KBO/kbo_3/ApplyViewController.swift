@@ -23,6 +23,23 @@ class ApplyViewController: UIViewController {
     
     @IBAction func applyYes(_ sender: Any) {
         /* 응모시 처리부분 */
+        
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        let entry = URL(string: urlStr_entry+deviceID+"&number=1")!
+        
+        let task = URLSession.shared.dataTask(with: entry as URL) { data, response, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
+            print((str as String) + " test ")
+            ticketback = str as String
+        }
+        
+        task.resume()
+        ticketNumber=ticketNumber-1
+        print(ticketNumber)
+        
         dismiss(animated: true, completion: nil)
     }
     
