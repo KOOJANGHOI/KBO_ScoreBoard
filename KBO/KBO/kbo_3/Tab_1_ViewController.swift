@@ -263,7 +263,7 @@ extension Tab_1_ViewController: UITableViewDataSource{
             cell?.GamePlace.text = schedule.stadium
             
            return cell!
-            
+        
     }
 }
 

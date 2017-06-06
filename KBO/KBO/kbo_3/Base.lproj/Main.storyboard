@@ -180,6 +180,7 @@
                                             <rect key="frame" x="25" y="58" width="250" height="29"/>
                                             <segments>
                                                 <segment title="원정팀 승"/>
+                                                <segment title="무승부"/>
                                                 <segment title="홈팀 승"/>
                                             </segments>
                                             <connections>
@@ -318,7 +319,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uJy-AO-nHH" id="cgD-VK-LYq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WZ-hf-kmj">
@@ -337,7 +338,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ase-up-73X">
-                                                    <rect key="frame" x="182" y="30" width="10" height="40"/>
+                                                    <rect key="frame" x="182" y="30" width="10" height="26.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="10" id="aqX-BH-u0V"/>
                                                     </constraints>
@@ -384,23 +385,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfi-dE-6hu">
-                                                    <rect key="frame" x="147" y="72" width="80" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="kA8-je-Em2"/>
-                                                    </constraints>
-                                                    <state key="normal" title="예측" backgroundImage="button2"/>
-                                                    <connections>
-                                                        <segue destination="R6z-3E-IkL" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Lty-m5-Wz7"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ase-up-73X" firstAttribute="leading" secondItem="nJ9-zi-LjT" secondAttribute="trailing" constant="42" id="09F-TT-doF"/>
                                                 <constraint firstItem="nJ9-zi-LjT" firstAttribute="baseline" secondItem="ya0-iN-7Ad" secondAttribute="baseline" id="3D1-9I-Xkx"/>
                                                 <constraint firstItem="Zpn-SM-PCl" firstAttribute="trailing" secondItem="cgD-VK-LYq" secondAttribute="trailingMargin" id="3zc-RD-g4U"/>
                                                 <constraint firstItem="0WZ-hf-kmj" firstAttribute="top" secondItem="nJ9-zi-LjT" secondAttribute="bottom" constant="10" id="AWE-Z2-ulY"/>
-                                                <constraint firstItem="Lfi-dE-6hu" firstAttribute="top" secondItem="BE2-jf-BcQ" secondAttribute="bottom" id="BPV-qx-DsF"/>
                                                 <constraint firstItem="ya0-iN-7Ad" firstAttribute="leading" secondItem="wES-eo-inA" secondAttribute="leading" id="HEO-m8-3WC"/>
                                                 <constraint firstItem="nJ9-zi-LjT" firstAttribute="trailing" secondItem="AzY-Uj-RTG" secondAttribute="trailing" id="JiQ-si-aFl"/>
                                                 <constraint firstItem="nJ9-zi-LjT" firstAttribute="leading" secondItem="AzY-Uj-RTG" secondAttribute="leading" id="Kbw-Vp-IEG"/>
@@ -416,15 +406,12 @@
                                                 <constraint firstItem="ase-up-73X" firstAttribute="top" secondItem="cgD-VK-LYq" secondAttribute="topMargin" constant="22" id="bO8-PX-YVC"/>
                                                 <constraint firstItem="Zpn-SM-PCl" firstAttribute="top" secondItem="ya0-iN-7Ad" secondAttribute="bottom" constant="9" id="cOC-zM-pKs"/>
                                                 <constraint firstItem="AzY-Uj-RTG" firstAttribute="baseline" secondItem="wES-eo-inA" secondAttribute="baseline" id="cvx-Z3-Jw9"/>
-                                                <constraint firstItem="Lfi-dE-6hu" firstAttribute="bottom" secondItem="cgD-VK-LYq" secondAttribute="bottomMargin" id="duK-St-Mxl"/>
                                                 <constraint firstItem="ase-up-73X" firstAttribute="centerX" secondItem="cgD-VK-LYq" secondAttribute="centerX" id="fpZ-gn-MWR"/>
                                                 <constraint firstItem="wES-eo-inA" firstAttribute="leading" secondItem="U95-XT-0p4" secondAttribute="trailing" id="gnJ-rc-lWz"/>
                                                 <constraint firstItem="BE2-jf-BcQ" firstAttribute="top" secondItem="cgD-VK-LYq" secondAttribute="topMargin" constant="24" id="hFx-8P-nLD"/>
-                                                <constraint firstItem="ase-up-73X" firstAttribute="centerX" secondItem="Lfi-dE-6hu" secondAttribute="centerX" id="hTE-Hn-eC0"/>
                                                 <constraint firstItem="nJ9-zi-LjT" firstAttribute="firstBaseline" secondItem="ya0-iN-7Ad" secondAttribute="firstBaseline" id="mxt-q9-Vqg"/>
                                                 <constraint firstItem="ya0-iN-7Ad" firstAttribute="trailing" secondItem="wES-eo-inA" secondAttribute="trailing" id="rGK-oO-plo"/>
                                                 <constraint firstItem="Zpn-SM-PCl" firstAttribute="leading" secondItem="U95-XT-0p4" secondAttribute="trailing" constant="67" id="wLj-Cn-NpB"/>
-                                                <constraint firstItem="Lfi-dE-6hu" firstAttribute="top" secondItem="ase-up-73X" secondAttribute="bottom" constant="2" id="wXm-pX-5C0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="AzY-Uj-RTG" secondAttribute="bottom" constant="30" id="wYW-U7-v5f"/>
                                                 <constraint firstItem="0WZ-hf-kmj" firstAttribute="leading" secondItem="cgD-VK-LYq" secondAttribute="leadingMargin" id="wso-OM-g2Z"/>
                                                 <constraint firstItem="BE2-jf-BcQ" firstAttribute="leading" secondItem="0WZ-hf-kmj" secondAttribute="trailing" constant="66" id="xM4-uq-AhK"/>
@@ -441,6 +428,7 @@
                                             <outlet property="HomeTeamName" destination="ya0-iN-7Ad" id="VTc-rx-81S"/>
                                             <outlet property="HomeTeamPitcherName" destination="wES-eo-inA" id="QGX-nI-eL3"/>
                                             <outlet property="HomeTeamScore" destination="U95-XT-0p4" id="Xxw-i1-dzM"/>
+                                            <segue destination="R6z-3E-IkL" kind="presentation" identifier="predictSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="jiB-vt-8lh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -514,7 +502,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0HY-sh-SZI" id="S7h-Hl-IkG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="순위" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Iz-5S-jdX">
@@ -644,7 +632,7 @@
             </objects>
             <point key="canvasLocation" x="540" y="-1023.2383808095952"/>
         </scene>
-        <!--선수순위-->
+        <!--Tab3 View Controller-->
         <scene sceneID="0Ta-Uz-G4U">
             <objects>
                 <viewController id="RRu-B3-F5c" customClass="Tab_3_ViewController" customModule="kbo_3" customModuleProvider="target" sceneMemberID="viewController">
@@ -657,7 +645,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="axQ-Ws-2kJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
                                 <segments>
                                     <segment title="투수"/>
                                     <segment title="타자"/>
@@ -667,13 +655,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YzU-X7-OYU" userLabel="pitcher">
-                                <rect key="frame" x="0.0" y="56" width="375" height="546"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="502"/>
                                 <connections>
                                     <segue destination="bxQ-cb-rWW" kind="embed" id="A9S-z7-kLy"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qm-CL-K3e" userLabel="batter">
-                                <rect key="frame" x="0.0" y="56" width="375" height="546"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="502"/>
                                 <connections>
                                     <segue destination="hwg-Dd-TmQ" kind="embed" id="paF-Pq-HW8"/>
                                 </connections>
@@ -694,7 +682,7 @@
                             <constraint firstAttribute="trailing" secondItem="axQ-Ws-2kJ" secondAttribute="trailing" id="y8r-T1-fH9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="선수순위" image="man" id="4Q4-AZ-CvA"/>
+                    <navigationItem key="navigationItem" id="BCx-AY-XMQ"/>
                     <connections>
                         <outlet property="batterContainer" destination="4Qm-CL-K3e" id="tLm-0K-aNK"/>
                         <outlet property="mainSegment" destination="axQ-Ws-2kJ" id="smE-T7-fEZ"/>
@@ -703,7 +691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmE-Tc-ZtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-399" y="-266"/>
+            <point key="canvasLocation" x="540" y="-266.71664167916043"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="Xmj-eM-pby">
@@ -920,7 +908,7 @@
                     <connections>
                         <segue destination="opI-Og-ANt" kind="relationship" relationship="viewControllers" id="iTZ-mX-aP5"/>
                         <segue destination="TFu-N8-O6M" kind="relationship" relationship="viewControllers" id="lHo-OJ-cu8"/>
-                        <segue destination="RRu-B3-F5c" kind="relationship" relationship="viewControllers" id="LIy-5C-tvh"/>
+                        <segue destination="p0T-OJ-VGT" kind="relationship" relationship="viewControllers" id="LIy-5C-tvh"/>
                         <segue destination="1Rg-Fb-1FH" kind="relationship" relationship="viewControllers" id="NVl-Iq-d7B"/>
                     </connections>
                 </tabBarController>
@@ -937,7 +925,7 @@
                         <viewControllerLayoutGuide type="bottom" id="H0d-8V-Iyx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zWz-0D-U1K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p30-Yf-cR8">
@@ -983,14 +971,14 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M8M-T3-TYS">
-                                <rect key="frame" x="16" y="234" width="343" height="312"/>
+                                <rect key="frame" x="16" y="234" width="343" height="268"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pitcherRankCell" id="B3P-AI-Xah" customClass="PitcherRankTableViewCell" customModule="kbo_3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B3P-AI-Xah" id="9da-nT-Oxv">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmq-wH-o9z">
@@ -1153,7 +1141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdZ-ez-lcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-445"/>
+            <point key="canvasLocation" x="2343.1999999999998" y="-445.27736131934034"/>
         </scene>
         <!--Batter Rank View Controller-->
         <scene sceneID="vzZ-04-qJq">
@@ -1164,18 +1152,18 @@
                         <viewControllerLayoutGuide type="bottom" id="eh6-lf-Znd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hzy-Lo-SDJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ADu-Lb-bXk">
-                                <rect key="frame" x="16" y="234" width="343" height="312"/>
+                                <rect key="frame" x="16" y="234" width="343" height="268"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="batterRankCell" id="rzx-jF-oTS" customClass="BatterRankTableViewCell" customModule="kbo_3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rzx-jF-oTS" id="88V-dT-1xV">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuW-0e-eh0">
@@ -1380,7 +1368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUt-w7-Rjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="130"/>
+            <point key="canvasLocation" x="2343.1999999999998" y="129.53523238380811"/>
         </scene>
         <!--일정/결과-->
         <scene sceneID="bIn-qn-4gg">
@@ -1419,6 +1407,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUe-St-38i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-399.19999999999999" y="-1023.2383808095952"/>
+        </scene>
+        <!--선수순위-->
+        <scene sceneID="bQp-HC-I7I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p0T-OJ-VGT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="선수순위" image="man" id="4Q4-AZ-CvA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ySE-uI-aE5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RRu-B3-F5c" kind="relationship" relationship="rootViewController" id="h1s-uo-qiY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sX4-Q5-vi6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-399.19999999999999" y="-266.71664167916043"/>
         </scene>
     </scenes>
     <resources>
