@@ -12,7 +12,7 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
    
     func getFromJSON(){
         hitters.removeAll()
-        let url = URL(string: urlStr_hitter)!
+        let url = URL(string: urlStr_hitter+UIDevice.current.identifierForVendor!.uuidString)!
         let data = try! Data(contentsOf: url)
         //JSON PARSING
         if let result = try! JSONSerialization.jsonObject(with: data, options: []) as? [ [String:Any] ]
@@ -59,7 +59,6 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         var rank = 1
-
         super.viewWillAppear(animated)
         BatterRankTableView.reloadData()
         if OtherKindButton == 0 {

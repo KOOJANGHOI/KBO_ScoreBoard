@@ -41,10 +41,14 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             return ""
         }
     }
+
     func getFromJSON(){
         pitchers.removeAll()
-        let url = URL(string: urlStr_pitcher)!
+        
+        let url = URL(string: urlStr_pitcher+UIDevice.current.identifierForVendor!.uuidString)!
+        
         let data = try! Data(contentsOf: url)
+        
         //JSON PARSING
         if let result = try! JSONSerialization.jsonObject(with: data, options: []) as? [ [String:Any] ]
         {
@@ -97,6 +101,10 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
         super.viewWillAppear(animated)
         
         var rank = 1
+        
+        
+        let deviceID = UIDevice.current.identifierForVendor!.uuidString
+        print("devcice id!!! "+deviceID)
         
         if OtherKindButton == 0 {
             pitchers.sort(by: { $0.so! > $1.so!})

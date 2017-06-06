@@ -7,11 +7,13 @@
 //
 
 import Foundation
+let urlStr_hitter = "http://127.0.0.1:8000/hitters?userid="
+let urlStr_pitcher = "http://127.0.0.1:8000/pitchers?userid="
+let urlStr_team = "http://127.0.0.1:8000/teams?userid="
 
-let urlStr_hitter = "http://192.168.43.83:8000/hitters/"
-let urlStr_pitcher = "http://192.168.43.83:8000/pitchers/"
-let urlStr_team = "http://192.168.43.83:8000/teams/"
+
 let poo:String = "구장회 똥냄새 지림"
+
 func mappingName(name: String)->String{
     switch name {
     case "피어밴드":
@@ -78,20 +80,19 @@ struct Team {
     var rank:Int?
     
 }
-struct Information {
+struct Schedule {
     
+    var state:Int
     var away_team:String
     var home_team:String
-    var away_pitcher:String
-    var home_pitcher:String
     var away_score:Int
     var home_score:Int
     var time:String
+    var day:String
     var stardium:String
     
 }
-var Schedule = [Information]()
-var Schedules = [Schedule]
+var Schedules = [Schedule]()
 
 var players = [Player]()
 

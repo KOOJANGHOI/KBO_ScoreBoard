@@ -11,7 +11,7 @@ import UIKit
 class Tab_2_ViewController: UIViewController, UITableViewDelegate {
     func getFromJSON(){
         teams.removeAll()
-        let url = URL(string: urlStr_team)!
+        let url = URL(string: urlStr_team+UIDevice.current.identifierForVendor!.uuidString)!
         let data = try! Data(contentsOf: url)
         //JSON PARSING
         if let result = try! JSONSerialization.jsonObject(with: data, options: []) as? [ [String:Any] ]
