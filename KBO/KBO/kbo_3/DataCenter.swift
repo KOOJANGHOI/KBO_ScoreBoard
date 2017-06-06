@@ -10,6 +10,8 @@ import Foundation
 let urlStr_hitter = "http://127.0.0.1:8000/hitters?userid="
 let urlStr_pitcher = "http://127.0.0.1:8000/pitchers?userid="
 let urlStr_team = "http://127.0.0.1:8000/teams?userid="
+let urlStr_schedule = "http://127.0.0.1:8000/schedules?userid="
+
 
 
 let poo:String = "구장회 똥냄새 지림"
@@ -80,19 +82,20 @@ struct Team {
     var rank:Int?
     
 }
+
 struct Schedule {
     
-    var state:Int
-    var away_team:String
-    var home_team:String
-    var away_score:Int
-    var home_score:Int
-    var time:String
-    var day:String
-    var stardium:String
+    var away_team:String?
+    var home_team:String?
+    var away_score:Int?
+    var home_score:Int?
+    var time:String?
+    var day:String?
+    var stardium:String?
+    var state:Int?
     
 }
-var Schedules = [Schedule]()
+var schedules = [Schedule]()
 
 var players = [Player]()
 
