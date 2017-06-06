@@ -8,9 +8,9 @@
 
 import Foundation
 
-let urlStr_hitter = "http://127.0.0.1:8000/hitters/"
-let urlStr_pitcher = "http://127.0.0.1:8000/pitchers/"
-let urlStr_team = "http://127.0.0.1:8000/teams/"
+let urlStr_hitter = "http://192.168.43.83:8000/hitters/"
+let urlStr_pitcher = "http://192.168.43.83:8000/pitchers/"
+let urlStr_team = "http://192.168.43.83:8000/teams/"
 let poo:String = "구장회 똥냄새 지림"
 func mappingName(name: String)->String{
     switch name {

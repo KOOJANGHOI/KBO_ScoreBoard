@@ -41,6 +41,8 @@ class Tab_2_ViewController: UIViewController, UITableViewDelegate {
     // 구단순위 테이블 뷰
     @IBOutlet weak var RankTableView: UITableView!
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         //super.viewWillAppear(animated)
         //RankTableView.reloadData()
