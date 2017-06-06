@@ -41,9 +41,6 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
         let data2 = try! Data(contentsOf: authenticate)
         
 
-        if let num = try! JSONSerialization.jsonObject(with: data2, options: []) as? String {
-            print(num)
-        }
         
         //JSON PARSING
         if let result = try! JSONSerialization.jsonObject(with: data, options: []) as? [ [String:Any] ]
