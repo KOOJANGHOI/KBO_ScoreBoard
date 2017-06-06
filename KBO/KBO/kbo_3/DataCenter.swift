@@ -10,7 +10,7 @@ import Foundation
 let urlStr_hitter = "http://127.0.0.1:8000/hitters?userid="
 let urlStr_pitcher = "http://127.0.0.1:8000/pitchers?userid="
 let urlStr_team = "http://127.0.0.1:8000/teams?userid="
-let urlStr_schedule = "http://127.0.0.1:8000/schedules?userid="
+let urlStr_schedule = "http://127.0.0.1:8000/schedules/"
 
 
 

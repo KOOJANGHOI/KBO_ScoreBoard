@@ -13,7 +13,7 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
     func getFromJSON(){
         schedules.removeAll()
         
-        let url = URL(string: urlStr_schedule+UIDevice.current.identifierForVendor!.uuidString)!
+        let url = URL(string: urlStr_schedule)!
         
         let data = try! Data(contentsOf: url)
         
@@ -25,18 +25,16 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
                 
                 var schedule = Schedule()
                 
-                guard let state = one["state"] as? Int,
-                    let time = one["time"] as? String,
-                    let day = one["day"] as? String,
-                    let home_team = one["home_team"] as? String,
-                    let home_score = one["home_score"] as? Int,
-                    let away_team=one["away_team"] as? String,
-                    let away_score=one["away_score"] as? Int,
-                    let stardium = one["stardium"] as? String
+                let state = one["state"] as? Int
+                let time = one["time"] as? String
+                let day = one["day"] as? String
+                let home_team = one["home_team"] as? String
+                let home_score = one["home_score"] as? Int
+                let away_team=one["away_team"] as? String
+                let away_score=one["away_score"] as? Int
+                let stardium = one["stardium"] as? String
 
-                    else{
-                        return
-                }
+                
                 
                 schedule.state = state
                 schedule.time = time
@@ -122,9 +120,17 @@ extension Tab_1_ViewController: UITableViewDataSource{
             let schedule = schedules[indexPath.row]
             
             cell?.HomeTeamName.text = schedule.home_team
-            cell?.HomeTeamScore.text = String(schedule.home_score!)
+            if schedule.home_score != nil {
+                cell?.HomeTeamScore.text = String(schedule.home_score!)
+            } else {
+                cell?.HomeTeamScore.text = String("")
+            }
             cell?.AwayTeamName.text = schedule.away_team
-            cell?.AwayTeamScore.text = String(schedule.away_score!)
+            if schedule.away_score != nil {
+                cell?.AwayTeamScore.text = String(schedule.away_score!)
+            } else {
+                cell?.AwayTeamScore.text = String("")
+            }
             cell?.GameTime.text = schedule.time
             cell?.GamePlace.text = schedule.stardium
             

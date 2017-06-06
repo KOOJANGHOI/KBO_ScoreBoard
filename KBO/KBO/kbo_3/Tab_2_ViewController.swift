@@ -9,6 +9,7 @@
 import UIKit
 
 class Tab_2_ViewController: UIViewController, UITableViewDelegate {
+  
     func getFromJSON(){
         teams.removeAll()
         let url = URL(string: urlStr_team+UIDevice.current.identifierForVendor!.uuidString)!
