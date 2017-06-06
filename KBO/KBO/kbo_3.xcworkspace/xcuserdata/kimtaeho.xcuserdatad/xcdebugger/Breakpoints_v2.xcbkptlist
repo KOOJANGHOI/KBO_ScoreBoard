@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbo_3/Tab_1_ViewController.swift"
-            timestampString = "518430788.643436"
+            timestampString = "518439144.900622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "getFromJSON()"
             landmarkType = "7">
          </BreakpointContent>
