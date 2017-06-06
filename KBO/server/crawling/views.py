@@ -263,11 +263,13 @@ def make_database_schedule(request):
                     schedule['time'] = info
 
                 elif index == 2:
+                    print(info)
                     info = info.replace('<em>', "")
                     info = info.replace('</em>', "")
                     info = info.replace('vs', " ")
                     info = info.replace('<span class="lose">', "")
                     info = info.replace('<span class="win">', "")
+                    info = info.replace('<span class="same">', "")
                     info = info.replace('</span>', "")
                     info = info.replace('<span>', "")
                     if len(info) > 6:
@@ -296,6 +298,7 @@ def make_database_schedule(request):
                     info = info.replace('vs', " ")
                     info = info.replace('<span class="lose">', "")
                     info = info.replace('<span class="win">', "")
+                    info = info.replace('<span class="same">', "")
                     info = info.replace('</span>', "")
                     info = info.replace('<span>', "")
                     if len(info) > 6:

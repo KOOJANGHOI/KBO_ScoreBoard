@@ -81,6 +81,14 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         self.getFromJSON()
 
+        
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE-MM-dd"
+        let dateString = dateFormatter.string(from:date as Date)
+        print(dateString)
+        
+        
         ScheduleTableView.reloadData()
         
         ScheduleTableView.dataSource = self
