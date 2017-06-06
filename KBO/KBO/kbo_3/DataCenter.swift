@@ -12,6 +12,36 @@ let urlStr_hitter = "http://127.0.0.1:8000/hitters/"
 let urlStr_pitcher = "http://127.0.0.1:8000/pitchers/"
 let urlStr_team = "http://127.0.0.1:8000/teams/"
 let poo:String = "구장회 똥냄새 지림"
+func mappingName(name: String)->String{
+    switch name {
+    case "피어밴드":
+        return "Feierabend"
+    case "박세웅":
+        return "PSW"
+    case "임기영":
+        return "LGY"
+    case "양현종":
+        return "YHZ"
+    case "켈리":
+        return "Kelly"
+    case "차우찬":
+        return "CWC"
+    case "이대호":
+        return "LDH"
+    case "윤석민":
+        return "YSM"
+    case "서건창":
+        return "SGC"
+    case "최형우":
+        return "CHW"
+    case "한동민":
+        return "HDM"
+    case "나성범":
+        return "NSB"
+    default:
+        return ""
+    }
+}
 
 struct Player {
     var id:Int?
@@ -54,8 +84,11 @@ struct Information {
     var home_team:String
     var away_pitcher:String
     var home_pitcher:String
+    var away_score:Int
+    var home_score:Int
     var time:String
     var stardium:String
+    
 }
 var Schedule = [Information]()
 var Schedules = [Schedule]

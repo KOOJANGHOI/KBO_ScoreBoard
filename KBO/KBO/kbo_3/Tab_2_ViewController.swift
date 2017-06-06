@@ -37,6 +37,7 @@ class Tab_2_ViewController: UIViewController, UITableViewDelegate {
         }
     }
 
+    
     // 구단순위 테이블 뷰
     @IBOutlet weak var RankTableView: UITableView!
     
@@ -135,8 +136,6 @@ extension Tab_2_ViewController: UITableViewDataSource{
 
                 }
                 //cell?.TeamLogo.image = UIImage(named: team.name!)
-            
-                
                 
                 cell?.WinNum.text = String(team.win!)
                 cell?.LoseNum.text = String(team.lose!)

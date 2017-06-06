@@ -9,6 +9,7 @@
 import UIKit
 
 class BatterRankViewController: UIViewController, UITableViewDelegate {
+   
     func getFromJSON(){
         hitters.removeAll()
         let url = URL(string: urlStr_hitter)!
@@ -71,6 +72,8 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerTeam.text = hitters[0].team
             RankerName.text = hitters[0].name
             filterName.text = "홈런"
+            BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
+
         } else if OtherKindButton == 1 {
             hitters.sort(by: { $0.point! > $1.point!})
             for i in 0..<hitters.count {
@@ -81,6 +84,8 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerTeam.text = hitters[0].team
             RankerName.text = hitters[0].name
             filterName.text = "타점"
+            BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
+
         } else {
             hitters.sort(by: { $0.rate! > $1.rate!})
             for i in 0..<hitters.count {
@@ -91,6 +96,8 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerTeam.text = hitters[0].team
             RankerName.text = hitters[0].name
             filterName.text = "타율"
+            BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
+
         }
         
     }
@@ -111,6 +118,8 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerTeam.text = hitters[0].team
             RankerName.text = hitters[0].name
             filterName.text = "홈런"
+            BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
+
         } else if OtherKindButton == 1 {
             hitters.sort(by: { $0.point! > $1.point!})
             for i in 0..<hitters.count {
@@ -121,6 +130,8 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerTeam.text = hitters[0].team
             RankerName.text = hitters[0].name
             filterName.text = "타점"
+            BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
+
         } else {
             hitters.sort(by: { $0.rate! > $1.rate!})
             for i in 0..<hitters.count {
@@ -131,6 +142,8 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerTeam.text = hitters[0].team
             RankerName.text = hitters[0].name
             filterName.text = "타율"
+            BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
+
         }
 
         OtherKindButton = 2

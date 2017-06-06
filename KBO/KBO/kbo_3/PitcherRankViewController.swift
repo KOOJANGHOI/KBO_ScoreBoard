@@ -11,6 +11,36 @@ import UIKit
 class PitcherRankViewController: UIViewController, UITableViewDelegate {
     var queue : OperationQueue!
 
+    func mappingName(name: String)->String{
+        switch name {
+        case "피어밴드":
+            return "Feierabend"
+        case "박세웅":
+            return "PSW"
+        case "임기영":
+            return "LGY"
+        case "양현종":
+            return "YHZ"
+        case "켈리":
+            return "Kelly"
+        case "차우찬":
+            return "CWC"
+        case "이대호":
+            return "LDH"
+        case "윤석민":
+            return "YSM"
+        case "서건창":
+            return "SGC"
+        case "최형우":
+            return "CHW"
+        case "한동민":
+            return "HDM"
+        case "나성범":
+            return "NSB"
+        default:
+            return ""
+        }
+    }
     func getFromJSON(){
         pitchers.removeAll()
         let url = URL(string: urlStr_pitcher)!
@@ -78,6 +108,7 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = pitchers[0].name
             RankerTeam.text = pitchers[0].team
             RankerNum.text = String(pitchers[0].so!)
+            PitcherImage.image = UIImage(named: mappingName(name: pitchers[0].name!))
 
         } else if OtherKindButton == 1 {
             pitchers.sort(by: { $0.era! < $1.era!})
@@ -89,6 +120,8 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = pitchers[0].name
             RankerTeam.text = pitchers[0].team
             RankerNum.text = String(pitchers[0].era!)
+            PitcherImage.image = UIImage(named: mappingName(name: pitchers[0].name!))
+
         } else {
             pitchers.sort(by: { $0.win! > $1.win!})
             for i in 0..<pitchers.count {
@@ -99,6 +132,8 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = pitchers[0].name
             RankerTeam.text = pitchers[0].team
             RankerNum.text = String(pitchers[0].win!)
+            PitcherImage.image = UIImage(named: mappingName(name: pitchers[0].name!))
+
         }
         PitcherRankTableView.reloadData()
         
@@ -123,6 +158,8 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = pitchers[0].name
             RankerTeam.text = pitchers[0].team
             RankerNum.text = String(pitchers[0].so!)
+            PitcherImage.image = UIImage(named: mappingName(name: pitchers[0].name!))
+            
         } else if OtherKindButton == 1 {
             pitchers.sort(by: { $0.era! < $1.era!})
             for i in 0..<pitchers.count {
@@ -133,6 +170,8 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = pitchers[0].name
             RankerTeam.text = pitchers[0].team
             RankerNum.text = String(pitchers[0].era!)
+            PitcherImage.image = UIImage(named: mappingName(name: pitchers[0].name!))
+
         } else {
             pitchers.sort(by: { $0.win! > $1.win!})
             for i in 0..<pitchers.count {
@@ -143,6 +182,8 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = pitchers[0].name
             RankerTeam.text = pitchers[0].team
             RankerNum.text = String(pitchers[0].win!)
+            PitcherImage.image = UIImage(named: mappingName(name: pitchers[0].name!))
+
         }
         PitcherRankTableView.reloadData()
         
@@ -240,6 +281,7 @@ extension PitcherRankViewController: UITableViewDataSource{
         cell?.PitcherTeam.text = pitcher.team
         cell?.PitcherRank.text = String(pitcher.rank!)
         
+      
         return cell!
             
         
