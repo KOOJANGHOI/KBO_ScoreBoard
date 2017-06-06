@@ -11,7 +11,7 @@ let urlStr_hitter = "http://127.0.0.1:8000/hitters?username="
 let urlStr_pitcher = "http://127.0.0.1:8000/pitchers?username="
 let urlStr_team = "http://127.0.0.1:8000/teams?username="
 let urlStr_schedule = "http://127.0.0.1:8000/schedules/"
-
+let urlStr_autheticate = "http://127.0.0.1:8000/authenticate/"
 
 
 let poo:String = "구장회 똥냄새 지림"
@@ -91,12 +91,12 @@ struct Schedule {
     var home_score:Int?
     var time:String?
     var day:String?
-    var stardium:String?
+    var stadium:String?
     var state:Int?
     
 }
 var schedules = [Schedule]()
-var week = ([Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule]())
+var week = [[Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule]()]
 
 var calendar = [Schedule]()
 

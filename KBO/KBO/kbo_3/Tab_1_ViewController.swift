@@ -11,43 +11,39 @@ import UIKit
 class Tab_1_ViewController: UIViewController, UITableViewDelegate {
 
     var index:Int = 3
-
+    let date = Date()
+    let ago1 = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+    let ago2 = Calendar.current.date(byAdding: .day, value: -2, to: Date())
+    let ago3 = Calendar.current.date(byAdding: .day, value: -3, to: Date())
+    let tomorrow1 = Calendar.current.date(byAdding: .day, value: 1, to: Date())
+    let tomorrow2 = Calendar.current.date(byAdding: .day, value: 2, to: Date())
+    let tomorrow3 = Calendar.current.date(byAdding: .day, value: 3, to: Date())
+    
+    let dateFormatter = DateFormatter()
+    let dateFormatter2 = DateFormatter()
+    
+    var dateString:String=""
+    var dateString_ago1:String=""
+    var dateString_ago2:String=""
+    var dateString_ago3:String=""
+    var dateString_tomorrow1:String=""
+    var dateString_tomorrow2:String=""
+    var dateString_tomorrow3:String=""
+    
     
     func getFromJSON(){
         schedules.removeAll()
         
         let url = URL(string: urlStr_schedule)!
+        let authenticate = URL(string: urlStr_autheticate+"?username=forybm")!
         
         let data = try! Data(contentsOf: url)
+        let data2 = try! Data(contentsOf: authenticate)
         
-        
-        let date = Date()
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM.dd"
-        let dateString = dateFormatter.string(from:date as Date)
-        //print(dateString)
-        
-        let ago1 = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let dateString_ago1 = dateFormatter.string(from:ago1! as Date)
 
-        let ago2 = Calendar.current.date(byAdding: .day, value: -2, to: Date())
-        let dateString_ago2 = dateFormatter.string(from:ago2! as Date)
-
-        let ago3 = Calendar.current.date(byAdding: .day, value: -3, to: Date())
-        let dateString_ago3 = dateFormatter.string(from:ago3! as Date)
-
-        let tomorrow1 = Calendar.current.date(byAdding: .day, value: 1, to: Date())
-        let dateString_tomorrow1 = dateFormatter.string(from:tomorrow1! as Date)
-
-        let tomorrow2 = Calendar.current.date(byAdding: .day, value: 2, to: Date())
-        let dateString_tomorrow2 = dateFormatter.string(from:tomorrow2! as Date)
-
-        let tomorrow3 = Calendar.current.date(byAdding: .day, value: 3, to: Date())
-        let dateString_tomorrow3 = dateFormatter.string(from:tomorrow3! as Date)
-
-
-
+        if let num = try! JSONSerialization.jsonObject(with: data2, options: []) as? String {
+            print(num)
+        }
         
         //JSON PARSING
         if let result = try! JSONSerialization.jsonObject(with: data, options: []) as? [ [String:Any] ]
@@ -64,9 +60,8 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
                 let home_score = one["home_score"] as? Int
                 let away_team=one["away_team"] as? String
                 let away_score=one["away_score"] as? Int
-                let stardium = one["stardium"] as? String
+                let stadium = one["stadium"] as? String
 
-                
                 
                 schedule.state = state
                 schedule.time = time
@@ -75,30 +70,30 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
                 schedule.home_score = home_score
                 schedule.away_team = away_team
                 schedule.away_score = away_score
-                schedule.stardium = stardium
+                schedule.stadium = stadium
                 
 
                 if dateString_ago3==day {
-                    week.0.append(schedule)
+                    week[0].append(schedule)
                 }
                 if dateString_ago2==day {
-                    week.1.append(schedule)
+                    week[1].append(schedule)
                 }
                 if dateString_ago1==day {
-                    week.2.append(schedule)
+                    week[2].append(schedule)
                 }
                 if dateString==day {
                     schedules.append(schedule)
-                    week.3.append(schedule)
+                    week[3].append(schedule)
                 }
                 if dateString_tomorrow1==day {
-                    week.4.append(schedule)
+                    week[4].append(schedule)
                 }
                 if dateString_tomorrow2==day {
-                    week.5.append(schedule)
+                    week[5].append(schedule)
                 }
                 if dateString_tomorrow3==day {
-                    week.6.append(schedule)
+                    week[6].append(schedule)
                 }
                 
             }
@@ -109,9 +104,57 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var DayInfo: UILabel!
     // 이전날짜 버튼 클릭시
     @IBAction func DayBeforeButton(_ sender: Any) {
+        
+        if(index == 0) {
+            index = 6
+        }else if(index == 1) {
+            index = 0
+        }else if(index == 2) {
+            index = 1
+        }else if(index == 3) {
+            index = 2
+        }else if(index == 4) {
+            index = 3
+        }else if(index == 5) {
+            index = 4
+        }else if(index == 6) {
+            index = 5
+        }
+        
+        switch index {
+        case 0: DayInfo.text = dateFormatter2.string(from: ago3! as Date)
+            
+        case 1: DayInfo.text = dateFormatter2.string(from: ago2! as Date)
+            
+        case 2: DayInfo.text = dateFormatter2.string(from: ago1! as Date)
+            
+        case 3: DayInfo.text = dateFormatter2.string(from: date as Date)
+            
+        case 4: DayInfo.text = dateFormatter2.string(from: tomorrow1! as Date)
+            
+        case 5: DayInfo.text = dateFormatter2.string(from: tomorrow2! as Date)
+            
+        case 6: DayInfo.text = dateFormatter2.string(from: tomorrow3! as Date)
+            
+        default: DayInfo.text = "오류"
+        }
+        self.viewWillAppear(true)
+        
     }
     // 다음날짜 버튼 클릭시
     @IBAction func DayAfterButton(_ sender: Any) {
+        index = (index+1)%7
+        switch index {
+        case 0: DayInfo.text = dateFormatter2.string(from: ago3! as Date)
+        case 1: DayInfo.text = dateFormatter2.string(from: ago2! as Date)
+        case 2: DayInfo.text = dateFormatter2.string(from: ago1! as Date)
+        case 3: DayInfo.text = dateFormatter2.string(from: date as Date)
+        case 4: DayInfo.text = dateFormatter2.string(from: tomorrow1! as Date)
+        case 5: DayInfo.text = dateFormatter2.string(from: tomorrow2! as Date)
+        case 6: DayInfo.text = dateFormatter2.string(from: tomorrow3! as Date)
+        default: DayInfo.text = "오류"
+        }
+        self.viewWillAppear(true)
     }
     // 일정/결과 테이블 뷰
     @IBOutlet weak var ScheduleTableView: UITableView!
@@ -134,6 +177,21 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        index = 3
+       
+        dateFormatter.dateFormat = "MM.dd"
+        dateFormatter2.dateFormat = "MM.dd (EEE)"
+        
+        dateString = dateFormatter.string(from:date as Date)
+        dateString_ago1 = dateFormatter.string(from:ago1! as Date)
+        dateString_ago2 = dateFormatter.string(from:ago2! as Date)
+        dateString_ago3 = dateFormatter.string(from:ago3! as Date)
+        dateString_tomorrow1 = dateFormatter.string(from:tomorrow1! as Date)
+        dateString_tomorrow2 = dateFormatter.string(from:tomorrow2! as Date)
+        dateString_tomorrow3 = dateFormatter.string(from:tomorrow3! as Date)
+
+        DayInfo.text = dateFormatter2.string(from: date as Date)
+        
         self.getFromJSON()
         
         ScheduleTableView.reloadData()
@@ -141,6 +199,11 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
         ScheduleTableView.dataSource = self
         ScheduleTableView.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        ScheduleTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -165,15 +228,17 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate {
 extension Tab_1_ViewController: UITableViewDataSource{
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return schedules.count
+        return week[index].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
             let cell = ScheduleTableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell
 
-            let schedule = schedules[indexPath.row]
-           // let schedule = week[index](index)[indexPath.row]
+           // let schedule = schedules[indexPath.row]
+            
+            let schedule = week[index][indexPath.row]
+            
             
             cell?.HomeTeamName.text = schedule.home_team
             if schedule.home_score != nil {
@@ -188,7 +253,7 @@ extension Tab_1_ViewController: UITableViewDataSource{
                 cell?.AwayTeamScore.text = String("")
             }
             cell?.GameTime.text = schedule.time
-            cell?.GamePlace.text = schedule.stardium
+            cell?.GamePlace.text = schedule.stadium
             
            return cell!
             
