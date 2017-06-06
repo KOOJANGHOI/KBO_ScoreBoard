@@ -1,8 +1,9 @@
 from django.http import HttpResponse, JsonResponse
+from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from crawling.models import Hitter, Pitcher, Team, Schedule
+from crawling.models import Hitter, Pitcher, Team, Schedule, User
 from crawling.serializers import HitterSerializer, PitcherSerializer, TeamSerializer, ScheduleSerializer
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
@@ -20,6 +21,22 @@ class JSONResponse(HttpResponse):
         content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json; charset=utf-8'
         super(JSONResponse, self).__init__(content, **kwargs)
+
+
+@csrf_exempt
+def authenticate(request):
+    if request.method == "GET":
+        username = request.GET.get("username")
+        try:
+            user = User.objects.get(username=username)
+        except:
+            user = User(username=username)
+            user.save()
+
+        ticket = user.ticket
+        return HttpResponse(ticket)
+    else:
+        return HttpResponse("fail")
 
 
 @csrf_exempt
@@ -255,6 +272,7 @@ def make_database_schedule(request):
             info = row["Text"]
             if cycle == 0:
                 if index == 0:
+                    info = info[0:5]
                     schedule['day'] = info
                     day = info
                 elif index == 1:

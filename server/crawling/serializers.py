@@ -23,4 +23,4 @@ class TeamSerializer(serializers.ModelSerializer):
 class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
-        fields = ('state', 'day', 'time', 'home_team', 'home_score', 'away_team', 'away_score', 'stadium')
+        fields = '__all__'

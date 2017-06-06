@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^make_database/pitcher/$', views.make_database_pitcher, name='make_database_pitcher'),
     url(r'^make_database/team/$', views.make_database_team, name='make_database_team'),
     url(r'^make_database/schedule/$', views.make_database_schedule, name='make_database_schedule'),
+    url(r'^authenticate/$', views.authenticate, name='authenticate'),
 ]
 
 # url(r'^hitters/(?P<pk>[0-9]+)/$', views.hitter_detail),

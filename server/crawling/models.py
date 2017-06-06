@@ -29,11 +29,16 @@ class Team(models.Model):
 class Schedule(models.Model):
     state = models.IntegerField(default=1)      # 1 끝남, 0 아직
     home_team = models.CharField(max_length=110)
-    home_pitcher = models.CharField(max_length=110)
+    # home_pitcher = models.CharField(max_length=110)
     home_score = models.PositiveIntegerField(null=True, blank=True)
     away_team = models.CharField(max_length=110)
-    away_pitcher = models.CharField(max_length=110)
+    # away_pitcher = models.CharField(max_length=110)
     away_score = models.PositiveIntegerField(null=True, blank=True)
     stadium = models.CharField(max_length=110)
     time = models.CharField(max_length=110)
     day = models.CharField(max_length=110, null=True, blank=True)
+
+
+class User(models.Model):
+    username = models.CharField(max_length=110)
+    ticket = models.PositiveIntegerField(default=0)
