@@ -10,8 +10,24 @@ import UIKit
 
 class Tab_4_ViewController: UIViewController {
 
+    var goodsFlag:Int = 0
+    @IBOutlet weak var ticketNum: UILabel!
+    @IBOutlet weak var goodsImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        switch goodsFlag {
+        case 0: goodsImage.image = #imageLiteral(resourceName: "goods_1")
+        case 1: goodsImage.image = #imageLiteral(resourceName: "goods_2")
+        case 2: goodsImage.image = #imageLiteral(resourceName: "goods_3")
+        case 3: goodsImage.image = #imageLiteral(resourceName: "goods_4")
+        case 4: goodsImage.image = #imageLiteral(resourceName: "goods_5")
+        default: goodsImage.image = nil
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

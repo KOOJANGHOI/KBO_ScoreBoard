@@ -96,6 +96,9 @@ struct Schedule {
     
 }
 var schedules = [Schedule]()
+var week = ([Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule](),[Schedule]())
+
+var calendar = [Schedule]()
 
 var players = [Player]()
 
