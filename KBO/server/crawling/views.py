@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import requests
 import json
-
+import re
 
 
 class JSONResponse(HttpResponse):
@@ -245,16 +245,18 @@ def make_database_schedule(request):
 
     cycle = 0
     schedules = []
-    print(len(js["rows"]))
+    int_parser = re.compile('\d+')
+    day = ""
     for rows in js["rows"]:
         index = 0
         schedule = {}
-        schedule['day'] = ''
+
         for row in rows["row"]:
             info = row["Text"]
             if cycle == 0:
                 if index == 0:
                     schedule['day'] = info
+                    day = info
                 elif index == 1:
                     info = info.replace('<b>', '')
                     info = info.replace('</b>', '')
@@ -268,16 +270,17 @@ def make_database_schedule(request):
                     info = info.replace('<span class="win">', "")
                     info = info.replace('</span>', "")
                     info = info.replace('<span>', "")
-                    if len(info) == 7:
-                        schedule['home_team'] = info[0:2]
-                        schedule['home_score'] = info[2]
-                        schedule['away_team'] = info[5:7]
-                        schedule['away_score'] = info[4]
+                    if len(info) > 6:
+                        schedule['away_score'] = int_parser.findall(info)[0]
+                        schedule['home_score'] = int_parser.findall(info)[1]
                         schedule['state'] = 1
+                        for k in int_parser.findall(info):
+                            info = info.replace(k, "")
                     else:
-                        schedule['away_team'] = info[0:2]
-                        schedule['home_team'] = info[3:5]
                         schedule['state'] = 0
+
+                    schedule['away_team'] = info.split(" ")[0]
+                    schedule['home_team'] = info.split(" ")[1]
 
                 elif index == 7:
                     schedule['stadium'] = info
@@ -286,6 +289,7 @@ def make_database_schedule(request):
                     info = info.replace('<b>', '')
                     info = info.replace('</b>', '')
                     schedule['time'] = info
+                    schedule['day'] = day
                 elif index == 1:
                     info = info.replace('<em>', "")
                     info = info.replace('</em>', "")
@@ -294,22 +298,23 @@ def make_database_schedule(request):
                     info = info.replace('<span class="win">', "")
                     info = info.replace('</span>', "")
                     info = info.replace('<span>', "")
-                    if len(info) == 7:
-                        schedule['home_team'] = info[0:2]
-                        schedule['home_score'] = info[2]
-                        schedule['away_team'] = info[5:7]
-                        schedule['away_score'] = info[4]
+                    if len(info) > 6:
+                        schedule['away_score'] = int_parser.findall(info)[0]
+                        schedule['home_score'] = int_parser.findall(info)[1]
                         schedule['state'] = 1
+                        for k in int_parser.findall(info):
+                            info = info.replace(k, "")
                     else:
-                        schedule['away_team'] = info[0:2]
-                        schedule['away_score'] = None
-                        schedule['home_team'] = info[3:5]
-                        schedule['home_score'] = None
                         schedule['state'] = 0
+
+                    schedule['away_team'] = info.split(" ")[0]
+                    schedule['home_team'] = info.split(" ")[1]
+
                 elif index == 6:
                     schedule['stadium'] = info
 
             index += 1
+
         schedules.append(schedule)
         cycle = (cycle + 1) % 5
 
