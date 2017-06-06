@@ -27,6 +27,7 @@ class Team(models.Model):
 
 
 class Schedule(models.Model):
+    game_id = models.IntegerField(default=0)
     state = models.IntegerField(default=1)      # 1 끝남, 0 아직
     home_team = models.CharField(max_length=110)
     # home_pitcher = models.CharField(max_length=110)
@@ -38,7 +39,29 @@ class Schedule(models.Model):
     time = models.CharField(max_length=110)
     day = models.CharField(max_length=110, null=True, blank=True)
 
+    def __str__(self):
+        return "game id" + str(self.game_id)
 
 class User(models.Model):
     username = models.CharField(max_length=110)
     ticket = models.PositiveIntegerField(default=0)
+
+
+class Gift(models.Model):
+    name = models.CharField(max_length=330)
+    num = models.IntegerField(default=0)
+
+
+class Prediction(models.Model):
+    user = models.ForeignKey(User)
+    schedule = models.ForeignKey(Schedule)
+    result = models.IntegerField(default=0)
+    state = models.BooleanField(default=False)
+    check = models.CharField(max_length=110, default="fail")     # or "success"
+
+
+class EntryList(models.Model):
+    user = models.ForeignKey(User)
+    gift = models.ForeignKey(Gift)
+    count = models.PositiveIntegerField(default=0)
+    state = models.BooleanField(default=False)
