@@ -19,7 +19,9 @@ class Tab_4_ViewController: UIViewController {
         super.viewDidLoad()
         
         switch goodsFlag {
-        case 0: goodsImage.image = #imageLiteral(resourceName: "goods_1")
+        case 0:
+            goodsImage.image = #imageLiteral(resourceName: "goods_1")
+            goodsImage.layer.masksToBounds = true
         case 1: goodsImage.image = #imageLiteral(resourceName: "goods_2")
         case 2: goodsImage.image = #imageLiteral(resourceName: "goods_3")
         case 3: goodsImage.image = #imageLiteral(resourceName: "goods_4")

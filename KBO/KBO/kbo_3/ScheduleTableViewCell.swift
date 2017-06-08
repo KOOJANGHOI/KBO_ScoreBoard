@@ -17,15 +17,13 @@ class ScheduleTableViewCell: UITableViewCell {
     
     //원정팀 정보
     @IBOutlet weak var AwayTeamName: UILabel!
-    @IBOutlet weak var AwayTeamPitcherStatus: UILabel!
-    @IBOutlet weak var AwayTeamPitcherName: UILabel!
     @IBOutlet weak var AwayTeamScore: UILabel!
+    @IBOutlet weak var AwayTeamLogo: UIImageView!
     
     //홈팀 정보
     @IBOutlet weak var HomeTeamScore: UILabel!
     @IBOutlet weak var HomeTeamName: UILabel!
-    @IBOutlet weak var HomeTeamPitcherStatus: UILabel!
-    @IBOutlet weak var HomeTeamPitcherName: UILabel!
+    @IBOutlet weak var HomeTeamLogo: UIImageView!
     
     @IBOutlet weak var GamePlace: UILabel!      // 경기 장소
     
