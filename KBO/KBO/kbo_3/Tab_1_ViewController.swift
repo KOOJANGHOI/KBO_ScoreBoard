@@ -259,7 +259,38 @@ extension Tab_1_ViewController: UITableViewDataSource{
             //cell?.GameTime.text = schedule.time
             //cell?.GamePlace.text = schedule.stadium
             
-           return cell!
+            switch schedule.away_team! {
+            case "삼성":
+                cell?.AwayTeamLogo.image = #imageLiteral(resourceName: "SAMSUNG")
+            case "넥센":
+                cell?.AwayTeamLogo.image = #imageLiteral(resourceName: "NEXEN")
+            case "두산":
+                cell?.AwayTeamLogo.image = #imageLiteral(resourceName: "DOOSAN")
+            case "롯데":
+                cell?.AwayTeamLogo.image = #imageLiteral(resourceName: "LOTTE")
+            case "한화":
+                cell?.AwayTeamLogo.image = #imageLiteral(resourceName: "HANHWA")
+            default:
+                cell?.AwayTeamLogo.image = UIImage(named: schedule.away_team!)
+                
+            }
+            switch schedule.home_team! {
+            case "삼성":
+                cell?.HomeTeamLogo.image = #imageLiteral(resourceName: "SAMSUNG")
+            case "넥센":
+                cell?.HomeTeamLogo.image = #imageLiteral(resourceName: "NEXEN")
+            case "두산":
+                cell?.HomeTeamLogo.image = #imageLiteral(resourceName: "DOOSAN")
+            case "롯데":
+                cell?.HomeTeamLogo.image = #imageLiteral(resourceName: "LOTTE")
+            case "한화":
+                cell?.HomeTeamLogo.image = #imageLiteral(resourceName: "HANHWA")
+            default:
+                cell?.HomeTeamLogo.image = UIImage(named: schedule.home_team!)
+                
+            }
+            
+            return cell!
         
     }
     
