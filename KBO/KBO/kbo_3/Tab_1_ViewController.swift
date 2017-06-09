@@ -211,6 +211,10 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         ScheduleTableView.reloadData()
+        
+        let backgroundImage = #imageLiteral(resourceName: "background3")
+        let imageView = UIImageView(image: backgroundImage)
+        ScheduleTableView.backgroundView = imageView
     }
 
     override func didReceiveMemoryWarning() {
@@ -233,6 +237,8 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate{
 
 extension Tab_1_ViewController: UITableViewDataSource{
     
+   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return week[index].count
     }
@@ -240,6 +246,7 @@ extension Tab_1_ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
             let cell = ScheduleTableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell
+            cell?.backgroundColor = UIColor(white: 0, alpha: 0.2)
 
            // let schedule = schedules[indexPath.row]
             

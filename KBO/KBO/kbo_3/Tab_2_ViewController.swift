@@ -47,6 +47,10 @@ class Tab_2_ViewController: UIViewController, UITableViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         //super.viewWillAppear(animated)
         //RankTableView.reloadData()
+        let backgroundImage = #imageLiteral(resourceName: "background3")
+        let imageView = UIImageView(image: backgroundImage)
+        RankTableView.backgroundView = imageView
+   
     }
     
     override func viewDidLoad() {
@@ -107,6 +111,9 @@ extension Tab_2_ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
             let cell = RankTableView.dequeueReusableCell(withIdentifier: "teamRankCell", for: indexPath) as? teamRankTableViewCell
+            
+             cell?.backgroundColor = UIColor(white: 0, alpha: 0.2)
+            
             if indexPath.row == 0 {
                 cell?.TeamLogo.image = nil
                 cell?.TeamName.text = "팀명"

@@ -150,6 +150,10 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
         }
         PitcherRankTableView.reloadData()
         
+        let backgroundImage = #imageLiteral(resourceName: "background3")
+        let imageView = UIImageView(image: backgroundImage)
+        PitcherRankTableView.backgroundView = imageView
+
 
 
     }
@@ -294,6 +298,8 @@ extension PitcherRankViewController: UITableViewDataSource{
         cell?.PitcherTeam.text = pitcher.team
         cell?.PitcherRank.text = String(pitcher.rank!)
         
+            cell?.backgroundColor = UIColor(white: 0, alpha: 0.2)
+
       
         return cell!
             

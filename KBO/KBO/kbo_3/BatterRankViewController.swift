@@ -133,6 +133,10 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
 
         }
         
+        let backgroundImage = #imageLiteral(resourceName: "background3")
+        let imageView = UIImageView(image: backgroundImage)
+            BatterRankTableView.backgroundView = imageView
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -254,6 +258,7 @@ extension BatterRankViewController: UITableViewDataSource{
             let cell = BatterRankTableView.dequeueReusableCell(withIdentifier: "batterRankCell", for: indexPath) as? BatterRankTableViewCell
             let hitter = hitters[indexPath.row+1]
             
+            cell?.backgroundColor = UIColor(white: 0, alpha: 0.2)
             cell?.BatterName.text = hitter.name
             
             if OtherKindButton == 0 {
