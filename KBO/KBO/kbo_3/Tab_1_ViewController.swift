@@ -31,7 +31,6 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate{
     var dateString_tomorrow2:String=""
     var dateString_tomorrow3:String=""
     
-    
     func getFromJSON(){
         
         let url = URL(string: urlStr_schedule)!
@@ -39,7 +38,7 @@ class Tab_1_ViewController: UIViewController, UITableViewDelegate{
         let data = try! Data(contentsOf: url)
 
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
-        let authenticate = URL(string: urlStr_autheticate+deviceID)!
+        let authenticate = URL(string: urlStr_autheticate+"?username="+deviceID)!
 
         let task = URLSession.shared.dataTask(with: authenticate as URL) { data, response, error in
             
@@ -245,7 +244,6 @@ extension Tab_1_ViewController: UITableViewDataSource{
            // let schedule = schedules[indexPath.row]
             
             let schedule = week[index][indexPath.row]
-            
             cell?.HomeTeamName.text = schedule.home_team
             if schedule.home_score != nil {
                 cell?.HomeTeamScore.text = String(schedule.home_score!)
@@ -270,7 +268,12 @@ extension Tab_1_ViewController: UITableViewDataSource{
         
         let indexPath = ScheduleTableView.indexPathForSelectedRow;
         
-        valueToPass = schedules[(indexPath?.row)!].gameId!
+        let schedule = week[index][(indexPath?.row)!]
+
+        print("game id = "+String(schedule.gameId!))
+        
+        valueToPass = schedule.gameId!
+
         performSegue(withIdentifier: "predictSegug", sender: self)
         
     }
@@ -279,7 +282,10 @@ extension Tab_1_ViewController: UITableViewDataSource{
         if let destination = segue.destination as? PredictViewController {
             let cell = sender as! UITableViewCell
             let selectedRow = ScheduleTableView.indexPath(for: cell)!.row
-            destination.gameNum = schedules[selectedRow].gameId!
+
+            let schedule = week[index][(selectedRow)]
+
+            destination.gameNum = schedule.gameId!
         }
     }
     

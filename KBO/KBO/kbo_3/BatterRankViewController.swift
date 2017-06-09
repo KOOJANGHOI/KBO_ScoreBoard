@@ -9,7 +9,41 @@
 import UIKit
 
 class BatterRankViewController: UIViewController, UITableViewDelegate {
-   
+    func mappingName(name: String)->String{
+        switch name {
+        case "피어밴드":
+            return "Feierabend"
+        case "박세웅":
+            return "PSW"
+        case "임기영":
+            return "LGY"
+        case "양현종":
+            return "YHZ"
+        case "켈리":
+            return "Kelly"
+        case "차우찬":
+            return "CWC"
+        case "이대호":
+            return "LDH"
+        case "윤석민":
+            return "YSM"
+        case "서건창":
+            return "SGC"
+        case "최형우":
+            return "CHW"
+        case "한동민":
+            return "HDM"
+        case "나성범":
+            return "NSB"
+        case "최정":
+            return "CJ"
+        case "헥터":
+            return "Hector"
+        default:
+            print("!!!KUSFHKHFKSHFKSAHDKHDISHAD!*&#*!(^#(!&*^#(")
+            return "CJ"
+        }
+    }
     func getFromJSON(){
         hitters.removeAll()
         let url = URL(string: urlStr_hitter)!
@@ -72,7 +106,7 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = hitters[0].name
             filterName.text = "홈런"
             BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
-
+            
         } else if OtherKindButton == 1 {
             hitters.sort(by: { $0.point! > $1.point!})
             for i in 0..<hitters.count {
@@ -118,7 +152,7 @@ class BatterRankViewController: UIViewController, UITableViewDelegate {
             RankerName.text = hitters[0].name
             filterName.text = "홈런"
             BatterImage.image = UIImage(named: mappingName(name: hitters[0].name!))
-
+        
         } else if OtherKindButton == 1 {
             hitters.sort(by: { $0.point! > $1.point!})
             for i in 0..<hitters.count {

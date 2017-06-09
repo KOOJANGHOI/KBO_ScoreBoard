@@ -31,29 +31,48 @@ class Tab_4_ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
-        let authenticate = URL(string: urlStr_autheticate+deviceID)!
+        getRequest(params: ["username" : deviceID], urlstr: urlStr_autheticate)
+
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func getRequest(params: [String:String], urlstr:String) {
         
-        let task = URLSession.shared.dataTask(with: authenticate as URL) { data, response, error in
+        let urlComp = NSURLComponents(string: urlstr)!
+        
+        var items = [URLQueryItem]()
+        
+        for (key,value) in params {
+            items.append(URLQueryItem(name: key, value: value))
+        }
+        
+        items = items.filter{!$0.name.isEmpty}
+        
+        if !items.isEmpty {
+            urlComp.queryItems = items
+        }
+        
+        var urlRequest = URLRequest(url: urlComp.url!)
+        urlRequest.httpMethod = "GET"
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             
             guard let data = data, error == nil else { return }
             
             self.str = NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
             print((self.str as String) + " test ")
             self.ticketNum.text = self.str
-
-            
-        }
-        
+  
+        })
         task.resume()
-        //self.ticketNum.text = String(ticketNumber)
-
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    /*
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

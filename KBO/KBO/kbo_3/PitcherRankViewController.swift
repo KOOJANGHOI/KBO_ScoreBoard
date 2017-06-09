@@ -37,8 +37,13 @@ class PitcherRankViewController: UIViewController, UITableViewDelegate {
             return "HDM"
         case "나성범":
             return "NSB"
+        case "최정":
+            return "CJ"
+        case "헥터":
+            return "Hector"
         default:
-            return ""
+            print("!!!KUSFHKHFKSHFKSAHDKHDISHAD!*&#*!(^#(!&*^#(")
+            return "CJ"
         }
     }
 

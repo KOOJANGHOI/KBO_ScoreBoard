@@ -37,6 +37,7 @@ class ApplyViewController: UIViewController {
         }
         
         task.resume()
+        
         ticketNumber=ticketNumber-1
         print(ticketNumber)
         
