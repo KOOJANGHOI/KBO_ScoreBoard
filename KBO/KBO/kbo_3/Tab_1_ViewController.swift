@@ -248,16 +248,16 @@ extension Tab_1_ViewController: UITableViewDataSource{
             if schedule.home_score != nil {
                 cell?.HomeTeamScore.text = String(schedule.home_score!)
             } else {
-                cell?.HomeTeamScore.text = String("")
+                cell?.HomeTeamScore.text = String("0")
             }
             cell?.AwayTeamName.text = schedule.away_team
             if schedule.away_score != nil {
                 cell?.AwayTeamScore.text = String(schedule.away_score!)
             } else {
-                cell?.AwayTeamScore.text = String("")
+                cell?.AwayTeamScore.text = String("0")
             }
-            cell?.GameTime.text = schedule.time
-            cell?.GamePlace.text = schedule.stadium
+            //cell?.GameTime.text = schedule.time
+            //cell?.GamePlace.text = schedule.stadium
             
            return cell!
         
