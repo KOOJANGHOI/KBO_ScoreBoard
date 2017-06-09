@@ -8,7 +8,7 @@
 
 import Foundation
 
-let baseip = "http://192.168.43.83:8000/"
+let baseip = "http://127.0.0.1:8000/"
 let urlStr_hitter = baseip+"hitters/"
 let urlStr_pitcher = baseip+"pitchers/"
 let urlStr_team = baseip+"teams/"
