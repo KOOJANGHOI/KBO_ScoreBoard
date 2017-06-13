@@ -247,21 +247,37 @@ extension Tab_1_ViewController: UITableViewDataSource{
         UITableViewCell {
             let cell = ScheduleTableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as? ScheduleTableViewCell
             cell?.backgroundColor = UIColor(white: 0, alpha: 0.2)
+            cell?.HomeTeamScore.textColor = UIColor.white
+            cell?.AwayTeamScore.textColor = UIColor.white
 
-           // let schedule = schedules[indexPath.row]
+            // let schedule = schedules[indexPath.row]
+            let home:Int
+            let away:Int
+            
             
             let schedule = week[index][indexPath.row]
             cell?.HomeTeamName.text = schedule.home_team
             if schedule.home_score != nil {
                 cell?.HomeTeamScore.text = String(schedule.home_score!)
+                home=schedule.home_score!
             } else {
                 cell?.HomeTeamScore.text = String("0")
+                home=0
             }
             cell?.AwayTeamName.text = schedule.away_team
             if schedule.away_score != nil {
                 cell?.AwayTeamScore.text = String(schedule.away_score!)
+                away=schedule.away_score!
             } else {
                 cell?.AwayTeamScore.text = String("0")
+                away=0
+            }
+            
+            
+            if away>home {
+                cell?.AwayTeamScore.textColor=UIColor.red
+            } else if away<home {
+                cell?.HomeTeamScore.textColor=UIColor.red
             }
             //cell?.GameTime.text = schedule.time
             //cell?.GamePlace.text = schedule.stadium
