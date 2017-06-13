@@ -50,10 +50,10 @@ def prediction(request):
             user = User.objects.get(username=username)
             game = Schedule.objects.get(game_id=game_id)
         except:
-            return HttpResponse("fail")
+            return HttpResponse("fail1")
 
         if game.state == 1:
-            return HttpResponse("fail")
+            return HttpResponse("fail2")
 
         try:
             pred = Prediction.objects.get(user=user, schedule=game)
@@ -64,7 +64,7 @@ def prediction(request):
         pred.save()
 
         return HttpResponse("success")
-    return HttpResponse("fail")
+    return HttpResponse("fail3")
 
 
 @csrf_exempt
@@ -77,16 +77,18 @@ def entry(request):
             user = User.objects.get(username=username)
             gift = Gift.objects.get(pk=pk)
         except:
-            return HttpResponse("fail")
+            return HttpResponse("fail1")
 
         if user.ticket <= 0:
-            return HttpResponse("fail")
+            return HttpResponse("fail2")
 
         entry = EntryList(user=user, gift=gift)
         entry.count += 1
+        user.ticket -= 1
+        user.save()
         entry.save()
-
-    return HttpResponse("fail")
+        return HttpResponse("success")
+    return HttpResponse(request.method)
 
 
 @csrf_exempt
@@ -353,7 +355,6 @@ def make_database_schedule(request):
                     schedule['time'] = info
 
                 elif index == 2:
-                    print(info)
                     info = info.replace('<em>', "")
                     info = info.replace('</em>', "")
                     info = info.replace('vs', " ")
@@ -366,8 +367,8 @@ def make_database_schedule(request):
                         schedule['away_score'] = int_parser.findall(info)[0]
                         schedule['home_score'] = int_parser.findall(info)[1]
                         schedule['state'] = 1
-                        for k in int_parser.findall(info):
-                            info = info.replace(k, "")
+                        for k in range(0, 10):
+                            info = info.replace(str(k), "")
                     else:
                         schedule['state'] = 0
 
@@ -395,8 +396,9 @@ def make_database_schedule(request):
                         schedule['away_score'] = int_parser.findall(info)[0]
                         schedule['home_score'] = int_parser.findall(info)[1]
                         schedule['state'] = 1
-                        for k in int_parser.findall(info):
-                            info = info.replace(k, "")
+                        for k in range(0, 10):
+                            info = info.replace(str(k), "")
+
                     else:
                         schedule['state'] = 0
 
@@ -445,15 +447,15 @@ def calculate(request):
         home = pred.schedule.home_score
 
         res = away - home
-        check = 0
+        check2 = 0
         if res > 0:
-            check = -1
+            check2 = -1
         elif res == 0:
-            check = 0
+            check2 = 0
         else:
-            check = 1
+            check2 = 1
 
-        if pred.result == check:
+        if pred.result == check2:
             user = pred.user
             user.ticket += 1
             pred.check = "success"
