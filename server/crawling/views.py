@@ -355,7 +355,6 @@ def make_database_schedule(request):
                     schedule['time'] = info
 
                 elif index == 2:
-                    print(info)
                     info = info.replace('<em>', "")
                     info = info.replace('</em>', "")
                     info = info.replace('vs', " ")
@@ -368,8 +367,8 @@ def make_database_schedule(request):
                         schedule['away_score'] = int_parser.findall(info)[0]
                         schedule['home_score'] = int_parser.findall(info)[1]
                         schedule['state'] = 1
-                        for k in int_parser.findall(info):
-                            info = info.replace(k, "")
+                        for k in range(0, 10):
+                            info = info.replace(str(k), "")
                     else:
                         schedule['state'] = 0
 
@@ -397,8 +396,9 @@ def make_database_schedule(request):
                         schedule['away_score'] = int_parser.findall(info)[0]
                         schedule['home_score'] = int_parser.findall(info)[1]
                         schedule['state'] = 1
-                        for k in int_parser.findall(info):
-                            info = info.replace(k, "")
+                        for k in range(0, 10):
+                            info = info.replace(str(k), "")
+
                     else:
                         schedule['state'] = 0
 
