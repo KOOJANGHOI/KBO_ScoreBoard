@@ -1940,13 +1940,12 @@
 		border: 0;
 		display: inline-block;
 		position: relative;
-		width: 40%;
 	}
 
 		.image img {
 			border-radius: 3px;
 			display: block;
-			object-fit: cover;
+			width: 100%;
 		}
 
 		.image.left {
@@ -2509,6 +2508,7 @@
 			.spotlight .image img {
 				border-radius: 0;
 				width: 100%;
+				height: 100%;
 			}
 
 		.spotlight .content {
