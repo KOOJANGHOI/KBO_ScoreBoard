@@ -2612,7 +2612,9 @@
 		}
 
 /* Wrapper */
-
+	.diagram-img{
+		text-align: center;
+	}
 	.wrapper {
 		padding: 6em 0 4em 0 ;
 	}
@@ -2798,6 +2800,13 @@
 
 		.wrapper.style2 {
 			background-color: #2e3842;
+		}
+		.wrapper.style6 {
+			background-color: #eeeeee;
+		}
+		.wrapper.style6 img {
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.wrapper.style3 {
