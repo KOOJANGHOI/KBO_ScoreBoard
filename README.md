@@ -43,7 +43,8 @@
 
     사용자는 받은 응모권을 바탕으로 경품을 추첨할 수 있다.
 
-#앱의 
+
+# 앱의 모식도 
 
 ![background_image](docs/images/diagram.png)
 
