@@ -45,8 +45,7 @@
 
 #앱의 
 
-
-
+![background_image](docs/image/diagram.png)
 
 
 
